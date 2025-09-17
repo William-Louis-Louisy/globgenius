@@ -1,0 +1,26 @@
+{
+  "AdminPage": {
+    "title": "Page Administrateur",
+    "description": "Si vous voyez cette page, vous êtes connecté en tant qu'administrateur."
+  },
+  "HomePage": {
+    "title": "Next.js Craft Template",
+    "description": "Un template pour les projets Next.js qui incluent Next-Auth, Next-Intl et TailwindCSS."
+  },
+  "Header": {
+    "hello": "Bonjour",
+    "logout": "Déconnexion",
+    "login": "Se connecter",
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "openMainMenu": "Ouvrir le menu principal"
+  },
+  "LocaleSwitch": {
+    "label": "Changer la langue",
+    "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Inconnu}}"
+  },
+  "ThemeToggle": {
+    "label": "Changer le thème",
+    "light": "Lumineux",
+    "dark": "Sombre"
+  }
+}

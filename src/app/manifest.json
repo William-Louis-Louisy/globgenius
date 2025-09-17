@@ -1,0 +1,20 @@
+{
+  "name": "Next.js Craft Template",
+  "short_name": "NCT",
+  "description": "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "nextjs-craft-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@phosphor-icons/react": "^2.1.7",
+    "@tailwindcss/postcss": "^4.0.17",
+    "next": "15.2.4",
+    "next-auth": "^4.24.11",
+    "next-intl": "^4.0.2",
+    "next-themes": "^0.4.6",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.17"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "typescript": "^5"
+  }
+}
