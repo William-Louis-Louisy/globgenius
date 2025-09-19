@@ -1,6 +1,14 @@
 import type { RandomCountryResponse } from "@/app/types/api";
 import type { CountryLite, NameSuggestion } from "@/app/types/country";
 
+export type FlagRandomResponse = Omit<RandomCountryResponse, "question"> & {
+  question: { type: "flag"; data: string };
+};
+
+export type CapitalRandomResponse = Omit<RandomCountryResponse, "question"> & {
+  question: { type: "capital"; data: string };
+};
+
 const namesCache = new Map<string, NameSuggestion[]>();
 const resolveCache = new Map<string, CountryLite>();
 
@@ -22,10 +30,6 @@ export async function getCountryNames(
   namesCache.set(key, data);
   return data;
 }
-
-export type FlagRandomResponse = Omit<RandomCountryResponse, "question"> & {
-  question: { type: "flag"; data: string };
-};
 
 export async function getRandomFlagQuestion(
   locale: string
@@ -62,4 +66,17 @@ export async function resolveCountry(
   } catch {
     return null;
   }
+}
+
+export async function getRandomCapitalQuestion(
+  locale: string
+): Promise<CapitalRandomResponse> {
+  const data = await fetchJson<RandomCountryResponse>(
+    `/api/countries/random?mode=capital&locale=${encodeURIComponent(locale)}`,
+    { cache: "no-store" }
+  );
+  if (data.question?.type !== "capital") {
+    throw new Error("Invalid question type for capital quiz.");
+  }
+  return data as CapitalRandomResponse;
 }

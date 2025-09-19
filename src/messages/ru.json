@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "Угадай страну по её столице",
+    "description": "Введи название страны, соответствующее показанной столице",
+    "maxAttempts": "Макс. попыток",
+    "validate": "Проверить",
+    "next": "Следующий вопрос",
+    "loading": "Загрузка…",
+    "prompt": "Столица",
+    "placeholder": "Введи название страны…",
+    "hints": "Подсказки",
+    "region": "Регион",
+    "firstLetter": "Первая буква",
+    "distanceFromYourGuess": "Расстояние до твоего ответа",
+    "remainingAttempts": "Оставшиеся попытки",
+    "correct": "Правильно!",
+    "wrong": "Неправильный ответ"
+  },
   "FlagPage": {
     "title": "Угадай флаг",
     "description": "Найди страну, соответствующую этому флагу",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "Изменить язык",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "Следующий вопрос через {s}s.",
+    "submit": "Проверить",
+    "next": "Следующий вопрос",
+    "remainingAttempts": "Оставшиеся попытки"
   },
   "ThemeToggle": {
     "label": "Изменить тему",

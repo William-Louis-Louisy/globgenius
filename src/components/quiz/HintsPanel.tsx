@@ -5,11 +5,11 @@ export type HintsProps = {
   labels: {
     title: string;
     region: string;
-    capital: string;
+    capital?: string;
     firstLetter: string;
   };
   showRegion: boolean;
-  showCapital: boolean;
+  showCapital?: boolean;
   showFirstLetter: boolean;
   region?: string | null;
   capital?: string | null;

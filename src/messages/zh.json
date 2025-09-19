@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "根据首都猜国家",
+    "description": "输入与所示首都对应的国家名称",
+    "maxAttempts": "最大尝试次数",
+    "validate": "提交",
+    "next": "下一题",
+    "loading": "加载中…",
+    "prompt": "首都",
+    "placeholder": "请输入国家名称…",
+    "hints": "提示",
+    "region": "地区",
+    "firstLetter": "首字母",
+    "distanceFromYourGuess": "与你的答案的距离",
+    "remainingAttempts": "剩余尝试次数",
+    "correct": "答对了！",
+    "wrong": "回答错误"
+  },
   "FlagPage": {
     "title": "猜旗帜",
     "description": "找到与该旗帜对应的国家",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "切换语言",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "下一题将在 {s}s 后。",
+    "submit": "提交",
+    "next": "下一题",
+    "remainingAttempts": "剩余尝试次数"
   },
   "ThemeToggle": {
     "label": "切换主题",

@@ -1,22 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { normalizeText, haversineKm } from "@/lib/geo";
 import {
+  resolveCountry,
   getCountryNames,
   getRandomFlagQuestion,
-  resolveCountry,
 } from "@/services/countries";
+import { normalizeText, haversineKm } from "@/lib/geo";
+import { Feedback, Guess, Options } from "@/app/types/game";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { CountryLite, NameSuggestion } from "@/app/types/country";
-
-export type Feedback = "idle" | "correct" | "wrong";
-
-export type Guess = {
-  label: string;
-  iso3?: string;
-  distanceKm?: number;
-  isCorrect: boolean;
-};
 
 type Hints = {
   region?: string | null;
@@ -39,11 +31,6 @@ export type UseFlagQuizState = {
   hints: Hints;
 };
 
-type Options = {
-  locale: string;
-  attempts?: number; // default 5
-};
-
 export type UseFlagQuizAPI = UseFlagQuizState & {
   filteredSuggestions(query: string): NameSuggestion[];
   submit(candidate: string): Promise<void>;
@@ -52,12 +39,10 @@ export type UseFlagQuizAPI = UseFlagQuizState & {
 
 export function useFlagQuiz({ locale, attempts = 5 }: Options): UseFlagQuizAPI {
   const [loading, setLoading] = useState(true);
-
   const [flagUrl, setFlagUrl] = useState<string | null>(null);
   const [answerEN, setAnswerEN] = useState<string>("");
   const [answerLocalized, setAnswerLocalized] = useState<string>("");
   const [answerDetails, setAnswerDetails] = useState<CountryLite | null>(null);
-
   const [suggestions, setSuggestions] = useState<NameSuggestion[]>([]);
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [attemptsLeft, setAttemptsLeft] = useState<number>(attempts);

@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "수도에서 나라 맞히기",
+    "description": "표시된 수도에 해당하는 나라 이름을 입력하세요",
+    "maxAttempts": "최대 시도",
+    "validate": "제출",
+    "next": "다음 문제",
+    "loading": "로딩 중…",
+    "prompt": "수도",
+    "placeholder": "나라 이름을 입력하세요…",
+    "hints": "힌트",
+    "region": "지역",
+    "firstLetter": "첫 글자",
+    "distanceFromYourGuess": "입력한 답과의 거리",
+    "remainingAttempts": "남은 시도",
+    "correct": "정답!",
+    "wrong": "오답입니다"
+  },
   "FlagPage": {
     "title": "국기 맞히기",
     "description": "이 국기에 해당하는 나라를 찾아보세요",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "언어 변경",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "다음 문제까지 {s}s.",
+    "submit": "제출",
+    "next": "다음 문제",
+    "remainingAttempts": "남은 시도"
   },
   "ThemeToggle": {
     "label": "테마 변경",
