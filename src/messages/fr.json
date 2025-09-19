@@ -1,11 +1,21 @@
 {
-  "AdminPage": {
-    "title": "Page Administrateur",
-    "description": "Si vous voyez cette page, vous êtes connecté en tant qu'administrateur."
-  },
-  "HomePage": {
-    "title": "Next.js Craft Template",
-    "description": "Un template pour les projets Next.js qui incluent Next-Auth, Next-Intl et TailwindCSS."
+  "FlagPage": {
+    "title": "Reconnais le drapeau",
+    "description": "Trouve le nom du pays correspondant au drapeau",
+    "maxAttempts": "tentatives max.",
+    "placeholder": "Saisis le nom du pays...",
+    "remainingAttempts": "Tentatives restantes",
+    "validate": "Valider",
+    "next": "Question suivante",
+    "loading": "Chargement...",
+    "correct": "Correct !",
+    "wrong": "Mauvaise réponse.",
+    "yourGuesses": "Tes tentatives",
+    "hints": "Indices",
+    "region": "Région",
+    "capital": "Capitale",
+    "firstLetter": "Première lettre",
+    "distanceFromYourGuess": "Distance"
   },
   "Header": {
     "hello": "Bonjour",
@@ -14,13 +24,37 @@
     "openUserMenu": "Ouvrir le menu utilisateur",
     "openMainMenu": "Ouvrir le menu principal"
   },
+  "HomePage": {
+    "title": "Deviens incollable en géographie",
+    "description": "Joue, progresse, et maîtrise drapeaux, capitales et frontières, un défi à la fois.",
+    "play": "Jouer",
+    "playNow": "Jouer maintenant",
+    "howToPlay": "Comment jouer ?",
+    "pickYourMode": "Choisissez votre mode",
+    "flag": {
+      "title": "Drapeau",
+      "pitch": "Devine le pays à partir de son drapeau."
+    },
+    "capital": {
+      "title": "Capitale",
+      "pitch": "Retrouve le pays à partir de sa capitale."
+    },
+    "shape": {
+      "title": "Forme",
+      "pitch": "Identifie le pays d’après son contour."
+    },
+    "ultimate": {
+      "title": "Ultime",
+      "pitch": "Forme → Drapeau → Capitale. Enchaîne sans te tromper !"
+    }
+  },
   "LocaleSwitch": {
     "label": "Changer la langue",
-    "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Inconnu}}"
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
   },
   "ThemeToggle": {
     "label": "Changer le thème",
-    "light": "Lumineux",
+    "light": "Clair",
     "dark": "Sombre"
   }
 }

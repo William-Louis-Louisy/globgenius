@@ -1,0 +1,60 @@
+{
+  "FlagPage": {
+    "title": "Adivina la bandera",
+    "description": "Encuentra el país que corresponde a la bandera",
+    "maxAttempts": "Intentos máx.",
+    "placeholder": "Introduce el nombre del país...",
+    "remainingAttempts": "Intentos restantes",
+    "validate": "Validar",
+    "next": "Siguiente pregunta",
+    "loading": "Cargando...",
+    "correct": "¡Correcto!",
+    "wrong": "Respuesta incorrecta.",
+    "yourGuesses": "Tus intentos",
+    "hints": "Pistas",
+    "region": "Región",
+    "capital": "Capital",
+    "firstLetter": "Primera letra",
+    "distanceFromYourGuess": "Distancia"
+  },
+  "Header": {
+    "hello": "Hola",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "openUserMenu": "Abrir el menú de usuario",
+    "openMainMenu": "Abrir el menú principal"
+  },
+  "HomePage": {
+    "title": "Conviértete en imbatible en geografía mundial",
+    "description": "Juega, progresa y domina banderas, capitales y fronteras, un desafío a la vez.",
+    "play": "Jugar",
+    "playNow": "Jugar ahora",
+    "howToPlay": "¿Cómo jugar?",
+    "pickYourMode": "Elige tu modo",
+    "flag": {
+      "title": "Bandera",
+      "pitch": "Adivina el país a partir de su bandera."
+    },
+    "capital": {
+      "title": "Capital",
+      "pitch": "Encuentra el país a partir de su capital."
+    },
+    "shape": {
+      "title": "Forma",
+      "pitch": "Identifica el país por su contorno."
+    },
+    "ultimate": {
+      "title": "Definitivo",
+      "pitch": "Forma → Bandera → Capital. ¡Encadena sin equivocarte!"
+    }
+  },
+  "LocaleSwitch": {
+    "label": "Cambiar idioma",
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "Cambiar el tema",
+    "light": "Claro",
+    "dark": "Oscuro"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "Next.js Craft Template",
-  "short_name": "NCT",
-  "description": "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS",
+  "name": "GlobGenius",
+  "short_name": "GG",
+  "description": "",
   "lang": "en",
   "dir": "ltr",
   "start_url": "/",

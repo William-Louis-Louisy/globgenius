@@ -1,0 +1,60 @@
+{
+  "FlagPage": {
+    "title": "Угадай флаг",
+    "description": "Найди страну, соответствующую этому флагу",
+    "maxAttempts": "Макс. попыток",
+    "placeholder": "Введи название страны…",
+    "remainingAttempts": "Оставшиеся попытки",
+    "validate": "Проверить",
+    "next": "Следующий вопрос",
+    "loading": "Загрузка…",
+    "correct": "Правильно!",
+    "wrong": "Неправильный ответ.",
+    "yourGuesses": "Твои попытки",
+    "hints": "Подсказки",
+    "region": "Регион",
+    "capital": "Столица",
+    "firstLetter": "Первая буква",
+    "distanceFromYourGuess": "Расстояние"
+  },
+  "Header": {
+    "hello": "Привет",
+    "logout": "Выйти",
+    "login": "Войти",
+    "openUserMenu": "Открыть меню пользователя",
+    "openMainMenu": "Открыть главное меню"
+  },
+  "HomePage": {
+    "title": "Стань непобедим в географии мира",
+    "description": "Играй, прогрессируй и осваивай флаги, столицы и границы — по одному испытанию за раз.",
+    "play": "Играть",
+    "playNow": "Играть сейчас",
+    "howToPlay": "Как играть?",
+    "pickYourMode": "Выбери режим",
+    "flag": {
+      "title": "Флаг",
+      "pitch": "Угадай страну по её флагу."
+    },
+    "capital": {
+      "title": "Столица",
+      "pitch": "Найди страну по её столице."
+    },
+    "shape": {
+      "title": "Форма",
+      "pitch": "Узнай страну по её контуру."
+    },
+    "ultimate": {
+      "title": "Ультимейт",
+      "pitch": "Форма → Флаг → Столица. Пройди цепочку без ошибок!"
+    }
+  },
+  "LocaleSwitch": {
+    "label": "Изменить язык",
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "Изменить тему",
+    "light": "Светлая",
+    "dark": "Тёмная"
+  }
+}

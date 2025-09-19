@@ -43,26 +43,23 @@ export default function LocaleSwitch() {
   };
 
   return (
-    <div className="w-20">
+    <div>
       <Listbox value={selected} onChange={handleChange}>
-        <div className="relative">
+        <div className="relative text-sm">
           <ListboxButton className="relative w-full cursor-default rounded-md bg-element py-2 pl-3 pr-10 text-left shadow-sm ring-0 focus:ring-0 focus:outline-none">
             <span className="block truncate">{selected.label}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-              <CaretUpDown
-                aria-hidden="true"
-                className="h-5 w-5 text-gray-400"
-              />
+              <CaretUpDown aria-hidden="true" className="size-4" />
             </span>
           </ListboxButton>
-          <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-element py-1 text-base shadow-lg ring-0 focus:outline-none sm:text-sm">
+          <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-fit overflow-auto rounded-md bg-element py-1 text-base shadow-lg ring-0 focus:outline-none sm:text-sm">
             {locales.map((loc) => (
               <ListboxOption
                 key={loc.id}
                 value={loc}
                 className={({ focus }) =>
                   `relative cursor-default select-none py-2 pl-4 pr-9 ${
-                    focus ? "bg-alternative text-background" : "text-foreground"
+                    focus ? "bg-foreground text-background" : "text-foreground"
                   }`
                 }
               >
@@ -77,7 +74,7 @@ export default function LocaleSwitch() {
                     </span>
                     {isSelected && (
                       <span className="absolute inset-y-0 right-0 flex items-center pr-4">
-                        <Check aria-hidden="true" className="h-5 w-5" />
+                        <Check aria-hidden="true" className="size-4" />
                       </span>
                     )}
                   </>

@@ -1,0 +1,60 @@
+{
+  "FlagPage": {
+    "title": "猜旗帜",
+    "description": "找到与该旗帜对应的国家",
+    "maxAttempts": "最大尝试次数",
+    "placeholder": "请输入国家名称…",
+    "remainingAttempts": "剩余尝试次数",
+    "validate": "提交",
+    "next": "下一题",
+    "loading": "加载中…",
+    "correct": "答对了！",
+    "wrong": "回答错误。",
+    "yourGuesses": "你的猜测",
+    "hints": "提示",
+    "region": "地区",
+    "capital": "首都",
+    "firstLetter": "首字母",
+    "distanceFromYourGuess": "与你的猜测的距离"
+  },
+  "Header": {
+    "hello": "你好",
+    "logout": "退出登录",
+    "login": "登录",
+    "openUserMenu": "打开用户菜单",
+    "openMainMenu": "打开主菜单"
+  },
+  "HomePage": {
+    "title": "成为世界地理达人",
+    "description": "通过游玩不断进步，逐步掌握旗帜、首都与边界——一次挑战一个目标。",
+    "play": "开始",
+    "playNow": "立即开始",
+    "howToPlay": "怎么玩？",
+    "pickYourMode": "选择模式",
+    "flag": {
+      "title": "旗帜",
+      "pitch": "根据旗帜猜国家。"
+    },
+    "capital": {
+      "title": "首都",
+      "pitch": "根据首都找到国家。"
+    },
+    "shape": {
+      "title": "形状",
+      "pitch": "根据轮廓识别国家。"
+    },
+    "ultimate": {
+      "title": "终极",
+      "pitch": "形状 → 旗帜 → 首都。连对不失误！"
+    }
+  },
+  "LocaleSwitch": {
+    "label": "切换语言",
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "切换主题",
+    "light": "浅色",
+    "dark": "深色"
+  }
+}

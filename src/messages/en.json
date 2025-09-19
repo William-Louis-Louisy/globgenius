@@ -1,11 +1,21 @@
 {
-  "AdminPage": {
-    "title": "Admin Page",
-    "description": "If you see this page, you are logged in as an admin."
-  },
-  "HomePage": {
-    "title": "Next.js Craft Template",
-    "description": "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS"
+  "FlagPage": {
+    "title": "Guess the flag",
+    "description": "Find the country that matches the flag",
+    "maxAttempts": "Max attempts",
+    "placeholder": "Enter the country name...",
+    "remainingAttempts": "Remaining attempts",
+    "validate": "Submit",
+    "next": "Next question",
+    "loading": "Loading...",
+    "correct": "Correct!",
+    "wrong": "Wrong answer.",
+    "yourGuesses": "Your guesses",
+    "hints": "Hints",
+    "region": "Region",
+    "capital": "Capital",
+    "firstLetter": "First letter",
+    "distanceFromYourGuess": "Distance"
   },
   "Header": {
     "hello": "Hello",
@@ -14,12 +24,36 @@
     "openUserMenu": "Open user menu",
     "openMainMenu": "Open main menu"
   },
+  "HomePage": {
+    "title": "Become unbeatable at world geography",
+    "description": "Play, progress, and master flags, capitals, and borders—one challenge at a time.",
+    "play": "Play",
+    "playNow": "Play now",
+    "howToPlay": "How to play?",
+    "pickYourMode": "Pick your mode",
+    "flag": {
+      "title": "Flag",
+      "pitch": "Guess the country from its flag."
+    },
+    "capital": {
+      "title": "Capital",
+      "pitch": "Find the country from its capital."
+    },
+    "shape": {
+      "title": "Shape",
+      "pitch": "Identify the country from its outline."
+    },
+    "ultimate": {
+      "title": "Ultimate",
+      "pitch": "Shape → Flag → Capital. Chain them without a mistake!"
+    }
+  },
   "LocaleSwitch": {
     "label": "Change language",
-    "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
   },
   "ThemeToggle": {
-    "label": "Toggle theme",
+    "label": "Change theme",
     "light": "Light",
     "dark": "Dark"
   }

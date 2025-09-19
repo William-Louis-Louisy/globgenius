@@ -1,0 +1,60 @@
+{
+  "FlagPage": {
+    "title": "国旗当て",
+    "description": "この国旗に対応する国名を見つけよう",
+    "maxAttempts": "最大試行回数",
+    "placeholder": "国名を入力してください…",
+    "remainingAttempts": "残りの試行回数",
+    "validate": "送信",
+    "next": "次の問題",
+    "loading": "読み込み中…",
+    "correct": "正解！",
+    "wrong": "不正解。",
+    "yourGuesses": "あなたの解答",
+    "hints": "ヒント",
+    "region": "地域",
+    "capital": "首都",
+    "firstLetter": "頭文字",
+    "distanceFromYourGuess": "あなたの解答との距離"
+  },
+  "Header": {
+    "hello": "こんにちは",
+    "logout": "ログアウト",
+    "login": "ログイン",
+    "openUserMenu": "ユーザーメニューを開く",
+    "openMainMenu": "メインメニューを開く"
+  },
+  "HomePage": {
+    "title": "世界地理で無敵になろう",
+    "description": "遊んで上達し、国旗・首都・国境を一つずつ極めよう。",
+    "play": "プレイ",
+    "playNow": "今すぐプレイ",
+    "howToPlay": "遊び方",
+    "pickYourMode": "モードを選ぶ",
+    "flag": {
+      "title": "国旗",
+      "pitch": "国旗から国名を当てよう。"
+    },
+    "capital": {
+      "title": "首都",
+      "pitch": "首都から国名を当てよう。"
+    },
+    "shape": {
+      "title": "形",
+      "pitch": "輪郭から国名を当てよう。"
+    },
+    "ultimate": {
+      "title": "アルティメット",
+      "pitch": "形 → 国旗 → 首都。ミスなく連続正解！"
+    }
+  },
+  "LocaleSwitch": {
+    "label": "言語を変更",
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "テーマを変更",
+    "light": "ライト",
+    "dark": "ダーク"
+  }
+}

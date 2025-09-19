@@ -4,11 +4,26 @@ import { notFound } from "next/navigation";
 import { routing } from "../../i18n/routing";
 import { hasLocale } from "next-intl";
 import Providers from "../providers";
+import { Montserrat, Poppins, Quicksand } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+});
 
 export const metadata: Metadata = {
-  title: "Next.js Craft Template",
+  title: "GlobGenius",
   description:
-    "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS",
+    "Joue, progresse, et maîtrise drapeaux, capitales et frontières, un défi à la fois.",
 };
 
 export default async function LocaleLayout({
@@ -33,9 +48,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body>
+      <body
+        className={`antialiased ${montserrat.variable} ${poppins.variable} ${quicksand.variable}`}
+      >
         <Providers locale={locale} messages={messages}>
-          {children}
+          <main>{children}</main>
         </Providers>
       </body>
     </html>

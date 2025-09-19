@@ -1,0 +1,60 @@
+{
+  "FlagPage": {
+    "title": "국기 맞히기",
+    "description": "이 국기에 해당하는 나라를 찾아보세요",
+    "maxAttempts": "최대 시도",
+    "placeholder": "나라 이름을 입력하세요…",
+    "remainingAttempts": "남은 시도",
+    "validate": "제출",
+    "next": "다음 문제",
+    "loading": "로딩 중…",
+    "correct": "정답!",
+    "wrong": "오답입니다.",
+    "yourGuesses": "내 시도",
+    "hints": "힌트",
+    "region": "지역",
+    "capital": "수도",
+    "firstLetter": "첫 글자",
+    "distanceFromYourGuess": "내 답과의 거리"
+  },
+  "Header": {
+    "hello": "안녕하세요",
+    "logout": "로그아웃",
+    "login": "로그인",
+    "openUserMenu": "사용자 메뉴 열기",
+    "openMainMenu": "메인 메뉴 열기"
+  },
+  "HomePage": {
+    "title": "세계 지리에 무적이 되자",
+    "description": "플레이하며 실력을 키우고, 국기·수도·국경을 하나씩 마스터하세요.",
+    "play": "플레이",
+    "playNow": "지금 플레이",
+    "howToPlay": "플레이 방법",
+    "pickYourMode": "모드를 선택하세요",
+    "flag": {
+      "title": "국기",
+      "pitch": "국기를 보고 나라를 맞히세요."
+    },
+    "capital": {
+      "title": "수도",
+      "pitch": "수도를 보고 나라를 맞히세요."
+    },
+    "shape": {
+      "title": "모양",
+      "pitch": "윤곽을 보고 나라를 맞히세요."
+    },
+    "ultimate": {
+      "title": "얼티밋",
+      "pitch": "모양 → 국기 → 수도. 한 번도 틀리지 말고 연속으로 맞히세요!"
+    }
+  },
+  "LocaleSwitch": {
+    "label": "언어 변경",
+    "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "테마 변경",
+    "light": "라이트",
+    "dark": "다크"
+  }
+}

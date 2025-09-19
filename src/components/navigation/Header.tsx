@@ -23,8 +23,6 @@ export default function Header() {
   const { data: session } = useSession();
   const t = useTranslations("Header");
 
-  console.log(session);
-
   return (
     <Disclosure as="nav" className={"fixed inset-x-0 top-0 z-50 bg-background"}>
       {/* Header */}
@@ -48,7 +46,7 @@ export default function Header() {
             {session ? (
               <Menu as="div" className="relative">
                 <div>
-                  <MenuButton className="relative cursor-pointer flex rounded-full text-sm focus:outline-none border border-transparent hover:border-element duration-150">
+                  <MenuButton className="relative cursor-pointer flex rounded-full text-sm focus:outline-none border border-transparent hover:border-element duration-200">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">{t("openUserMenu")}</span>
                     <Image
@@ -85,18 +83,20 @@ export default function Header() {
                       onClick={() => signOut()}
                     >
                       <SignOut size={20} weight="bold" />
-                      <span className="hidden md:flex">{t("logout")}</span>
+                      <span className="hidden text-sm md:flex">
+                        {t("logout")}
+                      </span>
                     </button>
                   </MenuItem>
                 </MenuItems>
               </Menu>
             ) : (
               <button
-                className="cursor-pointer text-background bg-alternative hover:bg-foreground duration-150 px-4 py-2 rounded-md"
+                className="cursor-pointer bg-accent hover:bg-accent/75 duration-150 px-4 py-2 rounded-md"
                 onClick={() => signIn("google")}
               >
                 <SignIn className="flex md:hidden" size={20} weight="bold" />
-                <span className="hidden md:flex">{t("login")}</span>
+                <span className="hidden text-sm md:flex">{t("login")}</span>
               </button>
             )}
           </div>
