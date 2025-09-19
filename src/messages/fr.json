@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "Devine le pays à partir de sa capitale",
+    "description": "Saisis le nom du pays correspondant à la capitale affichée",
+    "maxAttempts": "tentatives maximum",
+    "validate": "Valider",
+    "next": "Question suivante",
+    "loading": "Chargement…",
+    "prompt": "Capitale",
+    "placeholder": "Saisis le nom du pays…",
+    "hints": "Indices",
+    "region": "Région",
+    "firstLetter": "Première lettre",
+    "distanceFromYourGuess": "Distance de votre réponse",
+    "remainingAttempts": "Tentatives restantes",
+    "correct": "Bonne réponse !",
+    "wrong": "Mauvaise réponse"
+  },
   "FlagPage": {
     "title": "Reconnais le drapeau",
     "description": "Trouve le nom du pays correspondant au drapeau",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "Changer la langue",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "Prochaine question dans {s}s.",
+    "submit": "Valider",
+    "next": "Question suivante",
+    "remainingAttempts": "Tentatives restantes"
   },
   "ThemeToggle": {
     "label": "Changer le thème",

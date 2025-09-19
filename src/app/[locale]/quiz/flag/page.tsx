@@ -1,12 +1,12 @@
 "use client";
-
 import Image from "next/image";
+import React, { useMemo, useState } from "react";
 import { useFlagQuiz } from "@/hooks/useFlagQuiz";
-import { SpinnerGap } from "@phosphor-icons/react";
 import GuessList from "@/components/quiz/GuessList";
 import HintsPanel from "@/components/quiz/HintsPanel";
 import { useLocale, useTranslations } from "next-intl";
-import React, { useMemo, useState, useTransition } from "react";
+import QuizActions from "@/components/quiz/QuizActions";
+import QuizHeading from "@/components/quiz/QuizHeading";
 import AttemptsFeedback from "@/components/quiz/AttemptsFeedback";
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper";
 import AnswerAutocomplete from "@/components/quiz/AnswerAutocomplete";
@@ -16,7 +16,6 @@ const ATTEMPTS = 5;
 export default function FlagQuizPage() {
   const locale = useLocale();
   const t = useTranslations("FlagPage");
-  const [isPending, startTransition] = useTransition();
 
   const quiz = useFlagQuiz({ locale, attempts: ATTEMPTS });
 
@@ -35,15 +34,17 @@ export default function FlagQuizPage() {
     setQuery("");
   }
 
+  console.log(quiz.answerEN);
+
   return (
     <MaxWidthWrapper className="min-h-page flex flex-col items-center mt-16">
       <div className="w-full max-w-xl p-6 text-center">
-        <header className="mb-6">
-          <h1 className="text-3xl">{t("title")}</h1>
-          <p className="text-sm opacity-70">
-            {t("description")}, {ATTEMPTS} {t("maxAttempts")}
-          </p>
-        </header>
+        <QuizHeading
+          title={t("title")}
+          description={t("description")}
+          maxAttempts={t("maxAttempts")}
+          attempts={ATTEMPTS}
+        />
 
         {quiz.loading || !quiz.flagUrl ? (
           <p className="text-neutral">{t("loading")}</p>
@@ -111,31 +112,16 @@ export default function FlagQuizPage() {
               />
 
               {/* Actions */}
-              <div className="flex gap-3">
-                <button
-                  type="submit"
-                  disabled={quiz.feedback !== "idle"}
-                  className="flex-1 rounded-lg px-4 py-2 font-semibold bg-accent hover:bg-accent/75 disabled:bg-neutral/40 cursor-pointer disabled:cursor-default"
-                >
-                  {t("validate")}
-                </button>
-                <button
-                  type="button"
-                  disabled={quiz.feedback === "idle" || isPending}
-                  onClick={() => {
-                    setSelected("");
-                    setQuery("");
-                    startTransition(quiz.nextQuestion);
-                  }}
-                  className="rounded-lg px-4 py-2 font-semibold text-background bg-foreground hover:bg-foreground/75 disabled:bg-neutral/40 cursor-pointer disabled:cursor-default"
-                >
-                  {isPending ? (
-                    <SpinnerGap size={20} className="animate-spin" />
-                  ) : (
-                    t("next")
-                  )}
-                </button>
-              </div>
+              <QuizActions
+                autoMode="on-correct"
+                feedback={quiz.feedback}
+                onSubmit={submitCurrent}
+                onNext={async () => {
+                  setSelected("");
+                  setQuery("");
+                  await quiz.nextQuestion();
+                }}
+              />
             </form>
           </>
         )}

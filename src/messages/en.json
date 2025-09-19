@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "Guess the country from its capital",
+    "description": "Enter the name of the country that matches the shown capital",
+    "maxAttempts": "Max attempts",
+    "validate": "Submit",
+    "next": "Next question",
+    "loading": "Loading…",
+    "prompt": "Capital",
+    "placeholder": "Enter the country name…",
+    "hints": "Hints",
+    "region": "Region",
+    "firstLetter": "First letter",
+    "distanceFromYourGuess": "Distance from your guess",
+    "remainingAttempts": "Remaining attempts",
+    "correct": "Correct!",
+    "wrong": "Wrong answer"
+  },
   "FlagPage": {
     "title": "Guess the flag",
     "description": "Find the country that matches the flag",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "Change language",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "Next question in {s}s.",
+    "submit": "Submit",
+    "next": "Next question",
+    "remainingAttempts": "Remaining attempts"
   },
   "ThemeToggle": {
     "label": "Change theme",

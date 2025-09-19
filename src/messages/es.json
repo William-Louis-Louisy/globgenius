@@ -1,4 +1,21 @@
 {
+  "CapitalPage": {
+    "title": "Adivina el país a partir de su capital",
+    "description": "Introduce el nombre del país que corresponde a la capital mostrada",
+    "maxAttempts": "Intentos máx.",
+    "validate": "Validar",
+    "next": "Siguiente pregunta",
+    "loading": "Cargando…",
+    "prompt": "Capital",
+    "placeholder": "Introduce el nombre del país…",
+    "hints": "Pistas",
+    "region": "Región",
+    "firstLetter": "Primera letra",
+    "distanceFromYourGuess": "Distancia de tu respuesta",
+    "remainingAttempts": "Intentos restantes",
+    "correct": "¡Correcto!",
+    "wrong": "Respuesta incorrecta"
+  },
   "FlagPage": {
     "title": "Adivina la bandera",
     "description": "Encuentra el país que corresponde a la bandera",
@@ -51,6 +68,12 @@
   "LocaleSwitch": {
     "label": "Cambiar idioma",
     "locale": "{locale, select, fr {français} en {english} es {español} pt {português} zh {中文} ja {日本語} ko {한국어} ru {русский} other {Unknown}}"
+  },
+  "QuizActions": {
+    "autoNextIn": "Siguiente pregunta en {s}s.",
+    "submit": "Validar",
+    "next": "Siguiente pregunta",
+    "remainingAttempts": "Intentos restantes"
   },
   "ThemeToggle": {
     "label": "Cambiar el tema",
