@@ -3,7 +3,7 @@ import { City, Crown, Flag, Polygon } from "@phosphor-icons/react";
 export type GameMode = "flag" | "capital" | "shape" | "ultimate";
 
 export interface IGameMode {
-  key: GameMode;
+  key?: GameMode;
   url: string;
   icon: React.ElementType;
 }

@@ -75,6 +75,19 @@
     "next": "Next question",
     "remainingAttempts": "Remaining attempts"
   },
+  "ShapePage": {
+    "title": "Guess the country from its outline",
+    "description": "Enter the name of the country that matches the shown shape",
+    "maxAttempts": "Max attempts",
+    "loading": "Loading…",
+    "placeholder": "Enter the country name…",
+    "hints": "Hints",
+    "region": "Region",
+    "firstLetter": "First letter",
+    "remainingAttempts": "Remaining attempts",
+    "correct": "Correct!",
+    "wrong": "Wrong answer"
+  },
   "ThemeToggle": {
     "label": "Change theme",
     "light": "Light",

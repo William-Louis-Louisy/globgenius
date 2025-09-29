@@ -1,9 +1,7 @@
-import { GameMode } from "@/lib/gameModes";
 import Link from "next/link";
 import React from "react";
 
 interface Props {
-  key: GameMode;
   url: string;
   icon: React.ElementType;
   title: string;
@@ -12,7 +10,6 @@ interface Props {
 }
 
 export default function GameModeCard({
-  key,
   url,
   icon,
   title,
@@ -21,10 +18,7 @@ export default function GameModeCard({
 }: Props) {
   const IconComponent = icon;
   return (
-    <div
-      key={key}
-      className="relative flex flex-col items-start justify-between gap-6 p-6 rounded-xl shadow mt-12 bg-element card-pattern"
-    >
+    <div className="relative flex flex-col items-start justify-between gap-6 p-6 rounded-xl shadow mt-12 bg-element card-pattern">
       <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 badge-pattern p-4 rounded-full border-12 border-background">
         <IconComponent size={48} />
       </span>

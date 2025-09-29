@@ -75,6 +75,19 @@
     "next": "下一题",
     "remainingAttempts": "剩余尝试次数"
   },
+  "ShapePage": {
+    "title": "根据轮廓猜国家",
+    "description": "输入与所示形状对应的国家名称",
+    "maxAttempts": "最大尝试次数",
+    "loading": "加载中…",
+    "placeholder": "请输入国家名称…",
+    "hints": "提示",
+    "region": "地区",
+    "firstLetter": "首字母",
+    "remainingAttempts": "剩余尝试次数",
+    "correct": "答对了！",
+    "wrong": "回答错误"
+  },
   "ThemeToggle": {
     "label": "切换主题",
     "light": "浅色",

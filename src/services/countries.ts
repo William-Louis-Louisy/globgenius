@@ -1,5 +1,6 @@
 import type { RandomCountryResponse } from "@/app/types/api";
 import type { CountryLite, NameSuggestion } from "@/app/types/country";
+import { GeoShape } from "@/app/types/geojson";
 
 export type FlagRandomResponse = Omit<RandomCountryResponse, "question"> & {
   question: { type: "flag"; data: string };
@@ -9,28 +10,41 @@ export type CapitalRandomResponse = Omit<RandomCountryResponse, "question"> & {
   question: { type: "capital"; data: string };
 };
 
+export type ShapeRandomResponse = Omit<RandomCountryResponse, "question"> & {
+  question: { type: "shape"; data: GeoShape };
+};
+
+type ResolveArgs = { locale: string; iso3?: string; name?: string };
+
 const namesCache = new Map<string, NameSuggestion[]>();
 const resolveCache = new Map<string, CountryLite>();
 
+// Fetcher
 async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
   const res = await fetch(url, init);
   if (!res.ok) throw new Error(`HTTP ${res.status} ${url}`);
   return (await res.json()) as T;
 }
-
+// Get all country names
 export async function getCountryNames(
   locale: string
 ): Promise<NameSuggestion[]> {
-  const key = locale.toLowerCase();
-  if (namesCache.has(key)) return namesCache.get(key)!;
+  // Normalise "fr-FR" -> "fr" (sans toucher au reste)
+  const base = (locale ?? "en").toLowerCase().split("-")[0];
+  const cacheKey = base;
+
+  if (namesCache.has(cacheKey)) return namesCache.get(cacheKey)!;
+
   const data = await fetchJson<NameSuggestion[]>(
-    `/api/countries/names?locale=${encodeURIComponent(key)}`,
+    `/api/countries/names?locale=${encodeURIComponent(base)}`,
     { cache: "force-cache" }
   );
-  namesCache.set(key, data);
+
+  namesCache.set(cacheKey, data);
   return data;
 }
 
+// Get a random flag question
 export async function getRandomFlagQuestion(
   locale: string
 ): Promise<FlagRandomResponse> {
@@ -44,8 +58,7 @@ export async function getRandomFlagQuestion(
   return data as FlagRandomResponse;
 }
 
-type ResolveArgs = { locale: string; iso3?: string; name?: string };
-
+// Resolve a country
 export async function resolveCountry(
   args: ResolveArgs
 ): Promise<CountryLite | null> {
@@ -67,7 +80,7 @@ export async function resolveCountry(
     return null;
   }
 }
-
+// Get a random capital question
 export async function getRandomCapitalQuestion(
   locale: string
 ): Promise<CapitalRandomResponse> {
@@ -79,4 +92,17 @@ export async function getRandomCapitalQuestion(
     throw new Error("Invalid question type for capital quiz.");
   }
   return data as CapitalRandomResponse;
+}
+
+export async function getRandomShapeQuestion(
+  locale: string
+): Promise<ShapeRandomResponse> {
+  const data = await fetchJson<RandomCountryResponse>(
+    `/api/countries/random?mode=shape&locale=${encodeURIComponent(locale)}`,
+    { cache: "no-store" }
+  );
+  if (data.question?.type !== "shape") {
+    throw new Error("Invalid question type for shape quiz.");
+  }
+  return data as ShapeRandomResponse;
 }

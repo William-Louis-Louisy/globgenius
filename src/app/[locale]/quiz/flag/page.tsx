@@ -34,11 +34,9 @@ export default function FlagQuizPage() {
     setQuery("");
   }
 
-  console.log(quiz.answerEN);
-
   return (
     <MaxWidthWrapper className="min-h-page flex flex-col items-center mt-16">
-      <div className="w-full max-w-xl p-6 text-center">
+      <div className="w-full max-w-xl py-4 md:py-0 text-center">
         <QuizHeading
           title={t("title")}
           description={t("description")}
