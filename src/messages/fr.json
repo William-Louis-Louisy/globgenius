@@ -75,6 +75,19 @@
     "next": "Question suivante",
     "remainingAttempts": "Tentatives restantes"
   },
+  "ShapePage": {
+    "title": "Devine le pays à partir de sa silhouette",
+    "description": "Saisis le nom du pays correspondant à la forme affichée",
+    "maxAttempts": "tentatives maximum",
+    "loading": "Chargement…",
+    "placeholder": "Saisis le nom du pays…",
+    "hints": "Indices",
+    "region": "Région",
+    "firstLetter": "Première lettre",
+    "remainingAttempts": "Tentatives restantes",
+    "correct": "Bonne réponse !",
+    "wrong": "Mauvaise réponse"
+  },
   "ThemeToggle": {
     "label": "Changer le thème",
     "light": "Clair",

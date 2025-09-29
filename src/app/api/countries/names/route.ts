@@ -1,30 +1,45 @@
 import { NextResponse } from "next/server";
 import countries from "@/data/countries.json";
 import type { Country } from "@/app/types/country";
+import { normalizeBaseLocale, translationKeyOf } from "@/lib/constants";
 
-// liste de locales prises en charge côté UI (tu peux compléter)
-const SUPPORTED = new Set(["en","fr","es","pt","zh","ja","ko","ru"]);
+type NameSuggestion = { iso3: string; name: string };
+
+// Ton JSON ressemble à Record<iso3, Country>
+const MAP = countries as Record<string, Country>;
+const ALL: Country[] = Object.values(MAP);
+
+/** Retourne le nom localisé avec l’ordre de priorité: 3 lettres -> 2 lettres -> common */
+function getTranslatedName(c: Country, baseLocale: string): string {
+  const tr: Record<string, string> | undefined = c.translations;
+  if (!tr) return c.name.common;
+
+  const key3 = translationKeyOf(baseLocale); // ex: "fra"
+  if (key3 && typeof tr[key3] === "string" && tr[key3].trim().length > 0) {
+    return tr[key3];
+  }
+  if (typeof tr[baseLocale] === "string" && tr[baseLocale].trim().length > 0) {
+    return tr[baseLocale];
+  }
+  return c.name.common;
+}
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const locale = searchParams.get("locale") ?? "en";
-  const loc = SUPPORTED.has(locale) ? locale : "en";
+  const base = normalizeBaseLocale(searchParams.get("locale"));
 
-  const map = countries as Record<string, Country>;
-  const all = Object.values(map);
-
-  // On renvoie { iso3, name } pour l’autocomplétion
-  const suggestions = all.map((c) => ({
+  // construit la liste localisée
+  const suggestions: NameSuggestion[] = ALL.map((c) => ({
     iso3: c.iso3,
-    name: (c.translations?.[loc as keyof typeof c.translations] as string) ?? c.name.common,
+    name: getTranslatedName(c, base),
   }));
 
-  // Optionnel : dédupliquer (au cas où)
+  // dé-duplication (au cas où)
   const seen = new Set<string>();
   const unique = suggestions.filter((s) => {
-    const key = `${s.name}|${s.iso3}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
+    const k = `${s.iso3}|${s.name}`;
+    if (seen.has(k)) return false;
+    seen.add(k);
     return true;
   });
 

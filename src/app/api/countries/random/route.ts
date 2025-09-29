@@ -12,6 +12,16 @@ function hasUsableCapital(c: Country): boolean {
   return !invalid.includes(cap.toLowerCase());
 }
 
+function hasShapeSvg(c: Country): boolean {
+  const s = c.shapeSvg;
+  return (
+    !!s &&
+    Array.isArray(s.paths) &&
+    s.paths.length > 0 &&
+    typeof s.viewBox === "string"
+  );
+}
+
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -23,6 +33,17 @@ export async function GET(req: NextRequest) {
   const locale = searchParams.get("locale") || "en";
 
   let answer: Country;
+
+  if (mode === "shape") {
+    const pool = ALL.filter(hasShapeSvg);
+    if (pool.length === 0) {
+      return NextResponse.json(
+        { error: "No countries with shape available." },
+        { status: 503 }
+      );
+    }
+    answer = pickRandom(pool);
+  }
 
   if (mode === "capital") {
     const pool = ALL.filter(hasUsableCapital);
@@ -40,20 +61,20 @@ export async function GET(req: NextRequest) {
   let question:
     | { type: "flag"; data: string }
     | { type: "capital"; data: string }
-    | { type: "shape"; data: Country["shape"] };
+    | { type: "shape"; data: Country["shapeSvg"] };
 
   switch (mode) {
     case "capital":
       question = { type: "capital", data: answer.capital };
       break;
     case "shape":
-      if (!answer.shape) {
+      if (!answer.shapeSvg) {
         return NextResponse.json(
           { error: "Shape not available" },
           { status: 404 }
         );
       }
-      question = { type: "shape", data: answer.shape };
+      question = { type: "shape", data: answer.shapeSvg };
       break;
     case "flag":
     default:

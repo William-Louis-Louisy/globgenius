@@ -13,7 +13,7 @@ export interface Country {
   borders: string[];
   flag: { svg: string; png: string };
   coatOfArms: { svg?: string | null; png?: string | null };
-  shape: GeoShape | null;
+  shapeSvg: GeoShape | null;
   difficulty: number;
 }
 

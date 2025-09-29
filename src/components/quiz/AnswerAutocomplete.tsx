@@ -58,7 +58,10 @@ export default function AnswerAutocomplete({
           }}
         />
         {suggestions.length > 0 && (
-          <ComboboxOptions className="absolute z-20 mt-2 max-h-64 w-full overflow-auto rounded-lg bg-element ring-2 ring-foreground shadow-xl divide-y divide-white/10 text-left">
+          <ComboboxOptions
+            modal={false}
+            className="absolute z-20 mt-2 max-h-64 w-full overflow-auto rounded-lg bg-element ring-2 ring-foreground shadow-xl divide-y divide-white/10 text-left"
+          >
             {suggestions.map((s) => (
               <ComboboxOption
                 key={s.iso3 + s.name}

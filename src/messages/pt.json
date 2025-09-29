@@ -75,6 +75,19 @@
     "next": "Próxima pergunta",
     "remainingAttempts": "Tentativas restantes"
   },
+  "ShapePage": {
+    "title": "Adivinhe o país pela silhueta",
+    "description": "Insira o nome do país correspondente à forma exibida",
+    "maxAttempts": "Tentativas máx.",
+    "loading": "Carregando…",
+    "placeholder": "Insira o nome do país…",
+    "hints": "Dicas",
+    "region": "Região",
+    "firstLetter": "Primeira letra",
+    "remainingAttempts": "Tentativas restantes",
+    "correct": "Correto!",
+    "wrong": "Resposta incorreta"
+  },
   "ThemeToggle": {
     "label": "Mudar o tema",
     "light": "Claro",

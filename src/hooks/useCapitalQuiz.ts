@@ -64,11 +64,14 @@ export function useCapitalQuiz({
     try {
       const data = await getRandomCapitalQuestion(locale);
       setCapital(data.question.data);
-      setAnswerEN(data.answer);
-      setAnswerLocalized(data.localizedAnswer ?? data.answer);
 
       const det = await resolveCountry({ locale, name: data.answer });
       setAnswerDetails(det);
+
+      setAnswerEN(det?.nameEN ?? data.answer);
+      setAnswerLocalized(
+        det?.nameLocalized ?? data.localizedAnswer ?? data.answer
+      );
     } finally {
       setLoading(false);
     }
@@ -94,9 +97,22 @@ export function useCapitalQuiz({
       if (feedback !== "idle" || !candidateRaw) return;
       const candidate = candidateRaw.trim();
 
-      const ok =
-        normalizeText(candidate) === normalizeText(answerLocalized) ||
-        normalizeText(candidate) === normalizeText(answerEN);
+      const normCandidate = normalizeText(candidate);
+      const normAnswerLoc = normalizeText(answerLocalized);
+      const normAnswerEN = normalizeText(answerEN);
+
+      const matchedSuggestion = suggestions.find(
+        (s) => normalizeText(s.name) === normCandidate
+      );
+
+      let ok =
+        !!matchedSuggestion &&
+        !!answerDetails?.iso3 &&
+        matchedSuggestion.iso3 === answerDetails.iso3;
+
+      if (!ok) {
+        ok = normCandidate === normAnswerLoc || normCandidate === normAnswerEN;
+      }
 
       const guess: Guess = { label: candidate, isCorrect: ok };
 
@@ -109,13 +125,13 @@ export function useCapitalQuiz({
       const next = attemptsLeft - 1;
       setAttemptsLeft(next);
 
-      const suggestion = suggestions.find(
-        (s) => normalizeText(s.name) === normalizeText(candidate)
-      );
-      if (answerDetails?.latlng && suggestion) {
-        const guessed = await resolveCountry({ locale, iso3: suggestion.iso3 });
+      if (answerDetails?.latlng && matchedSuggestion) {
+        const guessed = await resolveCountry({
+          locale,
+          iso3: matchedSuggestion.iso3,
+        });
         if (guessed?.latlng) {
-          guess.iso3 = suggestion.iso3;
+          guess.iso3 = matchedSuggestion.iso3;
           guess.distanceKm = haversineKm(guessed.latlng, answerDetails.latlng);
         }
       }

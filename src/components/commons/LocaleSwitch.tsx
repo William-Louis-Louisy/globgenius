@@ -52,7 +52,10 @@ export default function LocaleSwitch() {
               <CaretUpDown aria-hidden="true" className="size-4" />
             </span>
           </ListboxButton>
-          <ListboxOptions className="absolute z-10 mt-1 max-h-60 w-fit overflow-auto rounded-md bg-element py-1 text-base shadow-lg ring-0 focus:outline-none sm:text-sm">
+          <ListboxOptions
+            modal={false}
+            className="absolute z-10 mt-1 max-h-60 w-fit overflow-auto rounded-md bg-element py-1 text-base shadow-lg ring-0 focus:outline-none sm:text-sm"
+          >
             {locales.map((loc) => (
               <ListboxOption
                 key={loc.id}

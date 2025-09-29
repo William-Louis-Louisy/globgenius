@@ -75,6 +75,19 @@
     "next": "Siguiente pregunta",
     "remainingAttempts": "Intentos restantes"
   },
+  "ShapePage": {
+    "title": "Adivina el país a partir de su silueta",
+    "description": "Introduce el nombre del país que corresponde a la forma mostrada",
+    "maxAttempts": "Intentos máx.",
+    "loading": "Cargando…",
+    "placeholder": "Introduce el nombre del país…",
+    "hints": "Pistas",
+    "region": "Región",
+    "firstLetter": "Primera letra",
+    "remainingAttempts": "Intentos restantes",
+    "correct": "¡Correcto!",
+    "wrong": "Respuesta incorrecta"
+  },
   "ThemeToggle": {
     "label": "Cambiar el tema",
     "light": "Claro",

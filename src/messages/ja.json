@@ -75,6 +75,19 @@
     "next": "次の問題",
     "remainingAttempts": "残りの試行回数"
   },
+  "ShapePage": {
+    "title": "輪郭から国名を当てよう",
+    "description": "表示された形に対応する国名を入力しよう",
+    "maxAttempts": "最大試行回数",
+    "loading": "読み込み中…",
+    "placeholder": "国名を入力してください…",
+    "hints": "ヒント",
+    "region": "地域",
+    "firstLetter": "頭文字",
+    "remainingAttempts": "残りの試行回数",
+    "correct": "正解！",
+    "wrong": "不正解"
+  },
   "ThemeToggle": {
     "label": "テーマを変更",
     "light": "ライト",

@@ -1,5 +1,5 @@
 import React from "react";
-import type { Guess } from "@/hooks/useFlagQuiz";
+import type { Guess } from "@/app/types/game";
 
 export default function GuessList({ guesses }: { guesses: Guess[] }) {
   if (guesses.length === 0) return null;

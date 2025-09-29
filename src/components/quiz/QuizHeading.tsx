@@ -15,7 +15,9 @@ export default function QuizHeading({
 }: Props) {
   return (
     <header className="mb-6">
-      <h1 className="text-3xl font-montserrat font-bold">{title}</h1>
+      <h1 className="text-2xl md:text-3xl font-montserrat font-bold">
+        {title}
+      </h1>
       <p className="text-sm opacity-70">
         {description}, {attempts} {maxAttempts}
       </p>

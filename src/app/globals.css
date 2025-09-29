@@ -75,7 +75,7 @@ h1 {
 }
 
 .cta {
-  @apply px-6 py-2 font-medium rounded-md;
+  @apply px-6 py-2 font-medium rounded-md w-full text-center;
 }
 
 .card-pattern {

@@ -25,7 +25,7 @@ export default function HomePage() {
         </div>
       </div>
       <MaxWidthWrapper className="flex flex-col items-center gap-8 mt-8 pb-12">
-        <div className="inline-flex items-center justify-center w-full gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center w-full gap-4">
           <Link
             href="/quiz/how-to-play"
             className="cta border border-foreground"

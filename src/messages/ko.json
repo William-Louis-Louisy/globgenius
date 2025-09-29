@@ -75,6 +75,19 @@
     "next": "다음 문제",
     "remainingAttempts": "남은 시도"
   },
+  "ShapePage": {
+    "title": "윤곽으로 나라 맞히기",
+    "description": "표시된 모양에 해당하는 나라 이름을 입력하세요",
+    "maxAttempts": "최대 시도",
+    "loading": "로딩 중…",
+    "placeholder": "나라 이름을 입력하세요…",
+    "hints": "힌트",
+    "region": "지역",
+    "firstLetter": "첫 글자",
+    "remainingAttempts": "남은 시도",
+    "correct": "정답!",
+    "wrong": "오답입니다"
+  },
   "ThemeToggle": {
     "label": "테마 변경",
     "light": "라이트",
