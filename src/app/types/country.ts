@@ -7,7 +7,7 @@ export interface Country {
   translations: Record<string, string>;
   capital: string;
   region: string;
-  latlng: [number, number];
+  latlng: [number, number] | null;
   area: number;
   population: number;
   borders: string[];
