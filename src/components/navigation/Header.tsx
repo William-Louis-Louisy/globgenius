@@ -1,27 +1,20 @@
 import {
-  Menu,
-  MenuItem,
-  MenuItems,
   Disclosure,
-  MenuButton,
   DisclosurePanel,
   DisclosureButton,
 } from "@headlessui/react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Logo from "../commons/Logo";
 import { useTranslations } from "next-intl";
+import { List, X } from "@phosphor-icons/react";
 import ThemeToggle from "../commons/ThemeToggle";
 import LocaleSwitch from "../commons/LocaleSwitch";
 import { navigationLinks } from "@/lib/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
 import MaxWidthWrapper from "../commons/MaxWidthWrapper";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { List, SignIn, SignOut, X } from "@phosphor-icons/react";
 
 export default function Header() {
   const pathname = usePathname();
-  const { data: session } = useSession();
   const t = useTranslations("Header");
 
   return (
