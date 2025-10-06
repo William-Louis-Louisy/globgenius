@@ -39,7 +39,14 @@
     "logout": "ログアウト",
     "login": "ログイン",
     "openUserMenu": "ユーザーメニューを開く",
-    "openMainMenu": "メインメニューを開く"
+    "openMainMenu": "メインメニューを開く",
+    "navigation": {
+      "flags": "国旗",
+      "capitals": "首都",
+      "shapes": "形",
+      "ultimate": "アルティメット",
+      "howToPlay": "遊び方"
+    }
   },
   "HomePage": {
     "title": "世界地理で無敵になろう",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "アルティメット",
       "pitch": "形 → 国旗 → 首都。ミスなく連続正解！"
+    }
+  },
+  "HowToPlay": {
+    "title": "遊び方",
+    "intro": "GlobGenius の遊び方はとても簡単：",
+    "distance": "不正解のあと、正解の国までの距離が表示されることがあります。",
+    "input": "国名を入力して候補から選択してください（候補にある回答のみ有効です）。",
+    "flags": {
+      "title": "国旗モード",
+      "how": "国旗から国名を当てよう。"
+    },
+    "shapes": {
+      "title": "輪郭モード",
+      "how": "国の輪郭から国名を当てよう。"
+    },
+    "capitals": {
+      "title": "首都モード",
+      "how": "首都から国名を当てよう。"
+    },
+    "ultimate": {
+      "title": "アルティメットモード",
+      "how": "輪郭・国旗・首都・数値（面積・人口）を組み合わせた連続チャレンジ。",
+      "numbers": "数値（面積・人口）は数字で入力。表示された許容誤差内なら正解です。"
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,41 @@
     "label": "テーマを変更",
     "light": "ライト",
     "dark": "ダーク"
+  },
+  "UltimatePage": {
+    "title": "アルティメットクイズ",
+    "description": "全6ステップで地理力を試そう。",
+    "loading": "読み込み中…",
+    "titleShape": "ステップ1 — 国を当てよう",
+    "titleArea": "ステップ2 — 面積を推定（km²）",
+    "titleFlag": "ステップ3 — 国旗を当てよう",
+    "titleCapital": "ステップ4 — 首都を入力",
+    "titlePopulation": "ステップ5 — 人口を推定",
+    "titleCoat": "ステップ6 — 国章を当てよう",
+    "currentCountry": "現在の国",
+    "showAnswers": "解答を表示",
+    "shape": "国",
+    "area": "面積",
+    "flag": "国旗",
+    "capital": "首都",
+    "population": "人口",
+    "coat": "国章",
+    "placeholderCountry": "国名を入力してください…",
+    "placeholderCapital": "首都名を入力してください…",
+    "numberPlaceholder": "数字を入力",
+    "tolerance": "許容誤差 ±{p}%",
+    "remainingAttempts": "残りの試行回数",
+    "correct": "正解！",
+    "wrong": "不正解",
+    "pickSuggestion": "リストから選択してください",
+    "seriesDone": "シリーズ終了",
+    "score": "スコア：",
+    "message": {
+      "zero": "おおっと、これは厳しい！",
+      "low": "悪くないけど、まだ伸びるよ。",
+      "mid": "いい感じ — もう一歩！",
+      "high": "最高！お見事！"
+    },
+    "nextSeries": "次のシリーズ"
   }
 }

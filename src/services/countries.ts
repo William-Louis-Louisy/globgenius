@@ -1,6 +1,7 @@
 import type { RandomCountryResponse } from "@/app/types/api";
 import type { CountryLite, NameSuggestion } from "@/app/types/country";
 import { GeoShape } from "@/app/types/geojson";
+import { UltimateRound } from "@/app/types/ultimate";
 
 export type FlagRandomResponse = Omit<RandomCountryResponse, "question"> & {
   question: { type: "flag"; data: string };
@@ -14,10 +15,13 @@ export type ShapeRandomResponse = Omit<RandomCountryResponse, "question"> & {
   question: { type: "shape"; data: GeoShape };
 };
 
+export type CapitalSuggestion = { iso3: string; capital: string };
+
 type ResolveArgs = { locale: string; iso3?: string; name?: string };
 
 const namesCache = new Map<string, NameSuggestion[]>();
 const resolveCache = new Map<string, CountryLite>();
+const capitalsCache = new Map<string, CapitalSuggestion[]>();
 
 // Fetcher
 async function fetchJson<T>(url: string, init?: RequestInit): Promise<T> {
@@ -105,4 +109,22 @@ export async function getRandomShapeQuestion(
     throw new Error("Invalid question type for shape quiz.");
   }
   return data as ShapeRandomResponse;
+}
+
+export async function getUltimateRound(locale: string): Promise<UltimateRound> {
+  const data = await fetch(
+    `/api/countries/ultimate/start?locale=${encodeURIComponent(locale)}`,
+    { cache: "no-store" }
+  );
+  if (!data.ok) throw new Error(`HTTP ${data.status}`);
+  return (await data.json()) as UltimateRound;
+}
+
+export async function getCapitals(): Promise<CapitalSuggestion[]> {
+  if (capitalsCache.has("all")) return capitalsCache.get("all")!;
+  const res = await fetch(`/api/countries/capitals`, { cache: "force-cache" });
+  if (!res.ok) return [];
+  const data = (await res.json()) as CapitalSuggestion[];
+  capitalsCache.set("all", data);
+  return data;
 }

@@ -36,6 +36,7 @@ export default function AnswerAutocomplete({
       <div className="relative">
         <ComboboxInput
           autoComplete="off"
+          type="text"
           className="w-full rounded-lg px-4 py-2 bg-black/20 outline-none ring-1 ring-white/10 focus:ring-2 focus:ring-foreground"
           displayValue={(v: string) => v}
           placeholder={placeholder}

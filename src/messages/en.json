@@ -39,7 +39,14 @@
     "logout": "Logout",
     "login": "Login",
     "openUserMenu": "Open user menu",
-    "openMainMenu": "Open main menu"
+    "openMainMenu": "Open main menu",
+    "navigation": {
+      "flags": "Flags",
+      "capitals": "Capitals",
+      "shapes": "Shapes",
+      "ultimate": "Ultimate",
+      "howToPlay": "How to play"
+    }
   },
   "HomePage": {
     "title": "Become unbeatable at world geography",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "Ultimate",
       "pitch": "Shape → Flag → Capital. Chain them without a mistake!"
+    }
+  },
+  "HowToPlay": {
+    "title": "How to play?",
+    "intro": "Playing GlobGenius is very simple:",
+    "distance": "After a wrong answer, the distance to the correct country may be shown to help you.",
+    "input": "Type the country name and pick from autocomplete (only the suggested answers are accepted).",
+    "flags": {
+      "title": "Flags mode",
+      "how": "Guess the country from its flag."
+    },
+    "shapes": {
+      "title": "Shapes mode",
+      "how": "Guess the country from its outline."
+    },
+    "capitals": {
+      "title": "Capitals mode",
+      "how": "Guess the country from its capital."
+    },
+    "ultimate": {
+      "title": "Ultimate mode",
+      "how": "A series mixing outlines, flags, capitals and values (area, population).",
+      "numbers": "For values (area, population), enter a number. Your answer is accepted if it’s within the shown tolerance."
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,41 @@
     "label": "Change theme",
     "light": "Light",
     "dark": "Dark"
+  },
+  "UltimatePage": {
+    "title": "Ultimate quiz",
+    "description": "6 steps to test your geography skills.",
+    "loading": "Loading…",
+    "titleShape": "Step 1 — Find the country",
+    "titleArea": "Step 2 — Estimate the area (km²)",
+    "titleFlag": "Step 3 — Find the flag",
+    "titleCapital": "Step 4 — Enter the capital",
+    "titlePopulation": "Step 5 — Estimate the population",
+    "titleCoat": "Step 6 — Find the coat of arms",
+    "currentCountry": "Current country",
+    "showAnswers": "Show answers",
+    "shape": "Country",
+    "area": "Area",
+    "flag": "Flag",
+    "capital": "Capital",
+    "population": "Population",
+    "coat": "Coat of arms",
+    "placeholderCountry": "Enter the country name…",
+    "placeholderCapital": "Enter the capital name…",
+    "numberPlaceholder": "Enter a number",
+    "tolerance": "Tolerance ±{p}%",
+    "remainingAttempts": "Remaining attempts",
+    "correct": "Correct!",
+    "wrong": "Wrong answer",
+    "pickSuggestion": "Please select a suggestion from the list",
+    "seriesDone": "End of the series",
+    "score": "Your score:",
+    "message": {
+      "zero": "Well, that could hardly be worse!",
+      "low": "Not bad, but you’ve got work to do.",
+      "mid": "Pretty good — you can push further.",
+      "high": "Awesome, that’s impressive!"
+    },
+    "nextSeries": "Next series"
   }
 }

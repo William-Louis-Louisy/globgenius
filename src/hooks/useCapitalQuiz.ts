@@ -6,9 +6,9 @@ import {
   getRandomCapitalQuestion,
 } from "@/services/countries";
 import { normalizeText, haversineKm } from "@/lib/geo";
+import { Feedback, Guess, Options } from "@/app/types/game";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { CountryLite, NameSuggestion } from "@/app/types/country";
-import { Feedback, Guess, Options } from "@/app/types/game";
 
 type Hints = {
   region?: string | null;

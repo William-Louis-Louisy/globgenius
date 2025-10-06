@@ -23,7 +23,9 @@ export default function AttemptsFeedback({
         {labels.remainingAttempts} : {attemptsLeft}
       </span>
       {feedback === "correct" && (
-        <span className="text-accent font-semibold">✅ {labels.correct}</span>
+        <span className="text-accent font-semibold">
+          ✅ {labels.correct} — {answerLocalized}
+        </span>
       )}
       {feedback === "wrong" && (
         <span className="text-red-400 font-semibold">

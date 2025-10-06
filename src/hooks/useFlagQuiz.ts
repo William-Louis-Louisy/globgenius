@@ -162,12 +162,12 @@ export function useFlagQuiz({ locale, attempts = 5 }: Options): UseFlagQuizAPI {
 
     const showRegion = wrongCount >= 2 && !!answerDetails?.region;
     const showCapital = wrongCount >= 3 && !!answerDetails?.capital;
-    const showFirstLetter = wrongCount >= 4 && !!answerEN[0];
+    const showFirstLetter = wrongCount >= 4 && !!answerLocalized[0];
 
     return {
       region: answerDetails?.region ?? null,
       capital: answerDetails?.capital ?? null,
-      firstLetter: showFirstLetter ? answerEN[0] : null,
+      firstLetter: showFirstLetter ? answerLocalized[0] : null,
       showRegion,
       showCapital,
       showFirstLetter,

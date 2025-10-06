@@ -39,7 +39,14 @@
     "logout": "退出登录",
     "login": "登录",
     "openUserMenu": "打开用户菜单",
-    "openMainMenu": "打开主菜单"
+    "openMainMenu": "打开主菜单",
+    "navigation": {
+      "flags": "旗帜",
+      "capitals": "首都",
+      "shapes": "形状",
+      "ultimate": "终极",
+      "howToPlay": "如何玩"
+    }
   },
   "HomePage": {
     "title": "成为世界地理达人",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "终极",
       "pitch": "形状 → 旗帜 → 首都。连对不失误！"
+    }
+  },
+  "HowToPlay": {
+    "title": "怎么玩？",
+    "intro": "玩 GlobGenius 非常简单：",
+    "distance": "回答错误后，可能会显示到正确国家的距离，帮助你判断方向。",
+    "input": "输入国家名称并从自动完成中选择（只接受列表中的选项）。",
+    "flags": {
+      "title": "国旗模式",
+      "how": "根据国旗来猜国家。"
+    },
+    "shapes": {
+      "title": "轮廓模式",
+      "how": "根据国家轮廓来猜国家。"
+    },
+    "capitals": {
+      "title": "首都模式",
+      "how": "根据首都来猜国家。"
+    },
+    "ultimate": {
+      "title": "终极模式",
+      "how": "混合轮廓、国旗、首都与数值（面积、人口）的一组挑战。",
+      "numbers": "涉及数值（面积、人口）时，请输入数字；在容差范围内即判为正确。"
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,41 @@
     "label": "切换主题",
     "light": "浅色",
     "dark": "深色"
+  },
+  "UltimatePage": {
+    "title": "终极测验",
+    "description": "6 个步骤，全面检验你的地理水平。",
+    "loading": "加载中…",
+    "titleShape": "第 1 步 — 找出国家",
+    "titleArea": "第 2 步 — 估算面积（km²）",
+    "titleFlag": "第 3 步 — 找出国旗",
+    "titleCapital": "第 4 步 — 输入首都",
+    "titlePopulation": "第 5 步 — 估算人口",
+    "titleCoat": "第 6 步 — 找出国徽",
+    "currentCountry": "当前国家",
+    "showAnswers": "显示答案",
+    "shape": "国家",
+    "area": "面积",
+    "flag": "国旗",
+    "capital": "首都",
+    "population": "人口",
+    "coat": "国徽",
+    "placeholderCountry": "请输入国家名称…",
+    "placeholderCapital": "请输入首都名称…",
+    "numberPlaceholder": "请输入数字",
+    "tolerance": "容差 ±{p}%",
+    "remainingAttempts": "剩余尝试次数",
+    "correct": "答对了！",
+    "wrong": "回答错误",
+    "pickSuggestion": "请从列表中选择一个建议",
+    "seriesDone": "本轮结束",
+    "score": "你的得分：",
+    "message": {
+      "zero": "好家伙，这已经到极限了。",
+      "low": "还行，但需要多练练。",
+      "mid": "不错——还能更好。",
+      "high": "太棒了，表现出色！"
+    },
+    "nextSeries": "下一轮"
   }
 }
