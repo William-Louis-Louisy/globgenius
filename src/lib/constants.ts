@@ -1,43 +1,61 @@
+import { AttemptsConfig } from "@/app/types/game";
+
 export const LOCALE_MAPPING: Record<string, string> = {
-  en: "eng", // Anglais
-  fr: "fra", // Français
-  es: "spa", // Espagnol
-  pt: "por", // Portugais
-  de: "deu", // Allemand
-  it: "ita", // Italien
-  nl: "nld", // Néerlandais
-  ru: "rus", // Russe
-  zh: "zho", // Chinois
-  ja: "jpn", // Japonais
-  ko: "kor", // Coréen
-  ar: "ara", // Arabe
-  tr: "tur", // Turc
-  pl: "pol", // Polonais
-  cs: "ces", // Tchèque
-  hr: "hrv", // Croate
-  hu: "hun", // Hongrois
-  et: "est", // Estonien
-  fi: "fin", // Finnois
-  sv: "swe", // Suédois
-  sk: "slk", // Slovaque
-  sr: "srp", // Serbe
-  fa: "per", // Persan
-  ur: "urd", // Urdu
-  id: "ind", // Indonésien
-  cy: "cym", // Gallois
-  br: "bre", // Breton
+  en: "eng",
+  fr: "fra",
+  es: "spa",
+  pt: "por",
+  de: "deu",
+  it: "ita",
+  nl: "nld",
+  ru: "rus",
+  zh: "zho",
+  ja: "jpn",
+  ko: "kor",
+  ar: "ara",
+  tr: "tur",
+  pl: "pol",
+  cs: "ces",
+  hr: "hrv",
+  hu: "hun",
+  et: "est",
+  fi: "fin",
+  sv: "swe",
+  sk: "slk",
+  sr: "srp",
+  fa: "per",
+  ur: "urd",
+  id: "ind",
+  cy: "cym",
+  br: "bre",
 };
 
 export const SUPPORTED = new Set(Object.keys(LOCALE_MAPPING));
 
-/** Normalise "fr-FR" -> "fr", valide, renvoie "en" sinon. */
 export function normalizeBaseLocale(input: string | null | undefined): string {
   const raw = (input ?? "en").toLowerCase();
   const base = raw.split("-")[0];
   return SUPPORTED.has(base) ? base : "en";
 }
 
-/** Retourne la clé de traduction “trois lettres” ("fra", "deu", etc.) */
 export function translationKeyOf(baseLocale: string): string {
   return LOCALE_MAPPING[baseLocale] ?? "eng";
 }
+
+export const DEFAULT_ATTEMPTS: AttemptsConfig = {
+  shape: 5,
+  area: 1,
+  flag: 1,
+  capital: 1,
+  population: 1,
+  coat: 1,
+};
+
+export const TITLE_MAP = {
+  shape: "titleShape",
+  area: "titleArea",
+  flag: "titleFlag",
+  capital: "titleCapital",
+  population: "titlePopulation",
+  coat: "titleCoat",
+} as const;

@@ -39,7 +39,14 @@
     "logout": "Déconnexion",
     "login": "Se connecter",
     "openUserMenu": "Ouvrir le menu utilisateur",
-    "openMainMenu": "Ouvrir le menu principal"
+    "openMainMenu": "Ouvrir le menu principal",
+    "navigation": {
+      "flags": "Drapeaux",
+      "capitals": "Capitales",
+      "shapes": "Formes",
+      "ultimate": "Ultime",
+      "howToPlay": "Comment jouer"
+    }
   },
   "HomePage": {
     "title": "Deviens incollable en géographie",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "Ultime",
       "pitch": "Forme → Drapeau → Capitale. Enchaîne sans te tromper !"
+    }
+  },
+  "HowToPlay": {
+    "title": "Comment jouer ?",
+    "intro": "Jouer à GlobGenius est très simple :",
+    "distance": "Après une mauvaise réponse, la distance jusqu'au bon pays peut s’afficher pour t’aider.",
+    "input": "Tape le nom du pays et choisis dans l’autocomplétion (seules les réponses proposées sont acceptées).",
+    "flags": {
+      "title": "Mode Drapeaux",
+      "how": "Devine le pays à partir de son drapeau."
+    },
+    "shapes": {
+      "title": "Mode Formes",
+      "how": "Devine le pays à partir de sa silhouette."
+    },
+    "capitals": {
+      "title": "Mode Capitales",
+      "how": "Devine le pays à partir de sa capitale."
+    },
+    "ultimate": {
+      "title": "Mode Ultime",
+      "how": "Une série mixant formes, drapeaux, capitales et valeurs (superficie, population).",
+      "numbers": "Pour les valeurs (superficie, population), entre un nombre. La réponse est acceptée si elle est dans la tolérance indiquée."
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,46 @@
     "label": "Changer le thème",
     "light": "Clair",
     "dark": "Sombre"
+  },
+  "UltimatePage": {
+    "title": "Quiz ultime",
+    "description": "6 étapes pour tester ta maîtrise géographique.",
+    "loading": "Chargement…",
+
+    "titleShape": "Étape 1 — Trouver le pays",
+    "titleArea": "Étape 2 — Estimer la superficie (km²)",
+    "titleFlag": "Étape 3 — Retrouver le drapeau",
+    "titleCapital": "Étape 4 — Indiquer la capitale",
+    "titlePopulation": "Étape 5 — Estimer la population",
+    "titleCoat": "Étape 6 — Retrouver les armoiries",
+    "currentCountry": "Pays courant",
+
+    "showAnswers": "Afficher les reponses",
+    "shape": "Pays",
+    "area": "Superficie",
+    "flag": "Drapeau",
+    "capital": "Capitale",
+    "population": "Population",
+    "coat": "Armoiries",
+
+    "placeholderCountry": "Saisis le nom du pays…",
+    "placeholderCapital": "Saisis le nom de la capitale…",
+    "numberPlaceholder": "Saisis un nombre",
+    "tolerance": "Tolérance ±{p}%",
+
+    "remainingAttempts": "Tentatives restantes",
+    "correct": "Bonne réponse !",
+    "wrong": "Mauvaise réponse",
+    "pickSuggestion": "Veuillez choisir une suggestion de la liste",
+
+    "seriesDone": "Fin de la série",
+    "score": "Ton score :",
+    "message": {
+      "zero": "Bravo, tu ne pouvais pas faire pire",
+      "low": "L'honneur est sauf mais il faut travailler",
+      "mid": "Pas mal, mais tu peux faire mieux",
+      "high": "Bravo, c'est très fort !"
+    },
+    "nextSeries": "Série suivante"
   }
 }

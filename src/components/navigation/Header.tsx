@@ -13,6 +13,7 @@ import Logo from "../commons/Logo";
 import { useTranslations } from "next-intl";
 import ThemeToggle from "../commons/ThemeToggle";
 import LocaleSwitch from "../commons/LocaleSwitch";
+import { navigationLinks } from "@/lib/navigation";
 import { Link, usePathname } from "@/i18n/navigation";
 import MaxWidthWrapper from "../commons/MaxWidthWrapper";
 import { useSession, signIn, signOut } from "next-auth/react";
@@ -30,20 +31,32 @@ export default function Header() {
         <header className="h-header flex justify-between items-center">
           <div className="flex">
             <Logo />
-
-            {/* Navigation */}
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              {/** Here goes the navigation links */}
-            </div>
+          </div>
+          {/* Navigation */}
+          <div className="hidden lg:ml-6 lg:flex lg:space-x-8 items-center">
+            {navigationLinks.map((link) => (
+              <Link
+                key={link.tradKey}
+                href={link.url}
+                className={cn(
+                  "hover:text-foreground/80 duration-200",
+                  pathname === link.url
+                    ? "text-accent font-bold"
+                    : "text-foreground/60 font-medium"
+                )}
+              >
+                {t(`navigation.${link.tradKey}`)}
+              </Link>
+            ))}
           </div>
 
           {/* Lang & Theme */}
-          <div className="hidden sm:ml-6 sm:flex sm:items-center sm:gap-4">
+          <div className="hidden lg:ml-6 lg:flex lg:items-center lg:gap-4">
             <ThemeToggle />
             <LocaleSwitch />
 
             {/* DropDown */}
-            {session ? (
+            {/* {session ? (
               <Menu as="div" className="relative">
                 <div>
                   <MenuButton className="relative cursor-pointer flex rounded-full text-sm focus:outline-none border border-transparent hover:border-element duration-200">
@@ -98,11 +111,11 @@ export default function Header() {
                 <SignIn className="flex md:hidden" size={20} weight="bold" />
                 <span className="hidden text-sm md:flex">{t("login")}</span>
               </button>
-            )}
+            )} */}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="-mr-2 flex items-center sm:hidden">
+          <div className="-mr-2 flex items-center lg:hidden">
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">{t("openMainMenu")}</span>
@@ -120,54 +133,23 @@ export default function Header() {
       </MaxWidthWrapper>
 
       {/* Mobile Menu */}
-      <DisclosurePanel className="sm:hidden h-page">
-        <div className="space-y-1 pb-3 pt-2">
-          {/** Here goes the navigation links wrapped in DisclosureButton */}
-          {session?.user?.role === "ADMIN" && (
+      <DisclosurePanel className="lg:hidden h-page">
+        <div className="space-y-1 py-6">
+          {navigationLinks.map((link) => (
             <DisclosureButton
+              key={link.tradKey}
               as={Link}
-              href="/admin"
+              href={link.url}
               className={cn(
-                "block w-full border-l-4 py-2 pl-3 pr-4 text-base font-medium",
-                pathname === "/admin"
-                  ? "border-foreground"
+                "block w-full border-l-4 py-3 pl-3 pr-4 text-base font-medium",
+                pathname === link.url
+                  ? "border-accent text-accent"
                   : "border-transparent"
               )}
             >
-              Admin
+              {t(`navigation.${link.tradKey}`)}
             </DisclosureButton>
-          )}
-        </div>
-        <div className="border-t border-alternative pb-3 pt-4">
-          <div className="flex items-center px-4">
-            <div className="flex-shrink-0">
-              <Image
-                alt="avatar"
-                src={
-                  session?.user.image ? session.user.image : "/no-avatar.webp"
-                }
-                width={36}
-                height={36}
-                className="rounded-full"
-              />
-            </div>
-            <div className="ml-3">
-              <div className="text-base font-medium text-gray-800">
-                {session?.user.name}
-              </div>
-              <div className="text-sm font-medium text-gray-500">
-                {session?.user.email}
-              </div>
-            </div>
-          </div>
-          <div className="mt-3 space-y-1">
-            <DisclosureButton
-              className="block px-4 py-2 text-base font-medium"
-              onClick={() => signOut()}
-            >
-              {t("logout")}
-            </DisclosureButton>
-          </div>
+          ))}
         </div>
       </DisclosurePanel>
     </Disclosure>

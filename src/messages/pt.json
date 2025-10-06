@@ -39,7 +39,14 @@
     "logout": "Sair",
     "login": "Entrar",
     "openUserMenu": "Abrir o menu do usuário",
-    "openMainMenu": "Abrir o menu principal"
+    "openMainMenu": "Abrir o menu principal",
+    "navigation": {
+      "flags": "Bandeiras",
+      "capitals": "Capitais",
+      "shapes": "Formas",
+      "ultimate": "Definitivo",
+      "howToPlay": "Como jogar"
+    }
   },
   "HomePage": {
     "title": "Torne-se imbatível em geografia mundial",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "Definitivo",
       "pitch": "Forma → Bandeira → Capital. Faça a sequência sem errar!"
+    }
+  },
+  "HowToPlay": {
+    "title": "Como jogar?",
+    "intro": "Jogar GlobGenius é muito simples:",
+    "distance": "Após um erro, a distância até o país correto pode ser exibida para ajudar você.",
+    "input": "Digite o nome do país e escolha na autocomplete (apenas as opções sugeridas são aceitas).",
+    "flags": {
+      "title": "Modo Bandeiras",
+      "how": "Adivinhe o país a partir da bandeira."
+    },
+    "shapes": {
+      "title": "Modo Formas",
+      "how": "Adivinhe o país pelo contorno."
+    },
+    "capitals": {
+      "title": "Modo Capitais",
+      "how": "Adivinhe o país a partir da capital."
+    },
+    "ultimate": {
+      "title": "Modo Definitivo",
+      "how": "Uma série que mistura contornos, bandeiras, capitais e valores (área, população).",
+      "numbers": "Para valores (área, população), insira um número. A resposta é aceita se estiver dentro da tolerância indicada."
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,41 @@
     "label": "Mudar o tema",
     "light": "Claro",
     "dark": "Escuro"
+  },
+  "UltimatePage": {
+    "title": "Quiz definitivo",
+    "description": "6 etapas para testar seu domínio de geografia.",
+    "loading": "Carregando…",
+    "titleShape": "Etapa 1 — Encontrar o país",
+    "titleArea": "Etapa 2 — Estimar a área (km²)",
+    "titleFlag": "Etapa 3 — Encontrar a bandeira",
+    "titleCapital": "Etapa 4 — Informar a capital",
+    "titlePopulation": "Etapa 5 — Estimar a população",
+    "titleCoat": "Etapa 6 — Encontrar o brasão",
+    "currentCountry": "País atual",
+    "showAnswers": "Mostrar respostas",
+    "shape": "País",
+    "area": "Área",
+    "flag": "Bandeira",
+    "capital": "Capital",
+    "population": "População",
+    "coat": "Brasão",
+    "placeholderCountry": "Insira o nome do país…",
+    "placeholderCapital": "Insira o nome da capital…",
+    "numberPlaceholder": "Insira um número",
+    "tolerance": "Tolerância ±{p}%",
+    "remainingAttempts": "Tentativas restantes",
+    "correct": "Correto!",
+    "wrong": "Resposta incorreta",
+    "pickSuggestion": "Por favor, escolha uma sugestão da lista",
+    "seriesDone": "Fim da série",
+    "score": "Sua pontuação:",
+    "message": {
+      "zero": "Eita… pior era difícil!",
+      "low": "Ok, mas dá para melhorar.",
+      "mid": "Bom — ainda há espaço para evoluir.",
+      "high": "Excelente, mandou muito bem!"
+    },
+    "nextSeries": "Próxima série"
   }
 }

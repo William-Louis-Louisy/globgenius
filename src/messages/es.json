@@ -39,7 +39,14 @@
     "logout": "Cerrar sesión",
     "login": "Iniciar sesión",
     "openUserMenu": "Abrir el menú de usuario",
-    "openMainMenu": "Abrir el menú principal"
+    "openMainMenu": "Abrir el menú principal",
+    "navigation": {
+      "flags": "Banderas",
+      "capitals": "Capitales",
+      "shapes": "Formas",
+      "ultimate": "Definitivo",
+      "howToPlay": "Como jugar"
+    }
   },
   "HomePage": {
     "title": "Conviértete en imbatible en geografía mundial",
@@ -63,6 +70,29 @@
     "ultimate": {
       "title": "Definitivo",
       "pitch": "Forma → Bandera → Capital. ¡Encadena sin equivocarte!"
+    }
+  },
+  "HowToPlay": {
+    "title": "¿Cómo jugar?",
+    "intro": "Jugar a GlobGenius es muy sencillo:",
+    "distance": "Tras una respuesta incorrecta, puede mostrarse la distancia hasta el país correcto para ayudarte.",
+    "input": "Escribe el nombre del país y elige en el autocompletado (solo se aceptan las opciones sugeridas).",
+    "flags": {
+      "title": "Modo Banderas",
+      "how": "Adivina el país a partir de su bandera."
+    },
+    "shapes": {
+      "title": "Modo Formas",
+      "how": "Adivina el país a partir de su silueta."
+    },
+    "capitals": {
+      "title": "Modo Capitales",
+      "how": "Adivina el país a partir de su capital."
+    },
+    "ultimate": {
+      "title": "Modo Definitivo",
+      "how": "Una serie que mezcla siluetas, banderas, capitales y valores (superficie, población).",
+      "numbers": "Para los valores (superficie, población), introduce un número. La respuesta se acepta si está dentro de la tolerancia indicada."
     }
   },
   "LocaleSwitch": {
@@ -92,5 +122,41 @@
     "label": "Cambiar el tema",
     "light": "Claro",
     "dark": "Oscuro"
+  },
+  "UltimatePage": {
+    "title": "Quiz definitivo",
+    "description": "6 pasos para poner a prueba tu dominio de geografía.",
+    "loading": "Cargando…",
+    "titleShape": "Paso 1 — Encontrar el país",
+    "titleArea": "Paso 2 — Estimar la superficie (km²)",
+    "titleFlag": "Paso 3 — Encontrar la bandera",
+    "titleCapital": "Paso 4 — Indicar la capital",
+    "titlePopulation": "Paso 5 — Estimar la población",
+    "titleCoat": "Paso 6 — Encontrar el escudo",
+    "currentCountry": "País actual",
+    "showAnswers": "Mostrar respuestas",
+    "shape": "País",
+    "area": "Superficie",
+    "flag": "Bandera",
+    "capital": "Capital",
+    "population": "Población",
+    "coat": "Escudo",
+    "placeholderCountry": "Introduce el nombre del país…",
+    "placeholderCapital": "Introduce el nombre de la capital…",
+    "numberPlaceholder": "Introduce un número",
+    "tolerance": "Tolerancia ±{p}%",
+    "remainingAttempts": "Intentos restantes",
+    "correct": "¡Correcto!",
+    "wrong": "Respuesta incorrecta",
+    "pickSuggestion": "Por favor, elige una sugerencia de la lista",
+    "seriesDone": "Fin de la serie",
+    "score": "Tu puntuación:",
+    "message": {
+      "zero": "Vaya, peor era difícil.",
+      "low": "Se salva el honor, pero hay que practicar.",
+      "mid": "Nada mal — aún puedes mejorar.",
+      "high": "¡Excelente, muy bien!"
+    },
+    "nextSeries": "Siguiente serie"
   }
 }

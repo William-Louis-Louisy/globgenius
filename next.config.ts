@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { hostname: "lh3.googleusercontent.com" },
       { hostname: "flagcdn.com" },
+      { hostname: "mainfacts.com" },
     ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "script-src 'none'; sandbox;",
   },
 };
 
