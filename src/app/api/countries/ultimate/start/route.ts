@@ -1,12 +1,32 @@
+import { GeoShape } from "@/app/types/geojson";
 import type {
   ChoiceOption,
-  UltimateStep,
   UltimateRound,
+  UltimateStep,
 } from "@/app/types/ultimate";
-import countries from "@/data/countries.json";
-import type { Country } from "@/app/types/country";
+import countriesJson from "@/data/countries.json";
 import { NextRequest, NextResponse } from "next/server";
 
+type CountryRaw = {
+  iso3: string;
+  name: { common: string; official?: string };
+  translations?: Record<
+    string,
+    string | { common?: string; official?: string } | null
+  > | null;
+  capital?: string | string[] | null;
+  region?: string | null;
+  area?: unknown;
+  population?: unknown;
+  flag?: { svg?: string | null } | null;
+  coatOfArms?: { svg?: string | null } | null;
+  shapeSvg?: { paths?: unknown; viewBox?: unknown } | null;
+};
+
+const MAP = countriesJson as unknown as Record<string, CountryRaw>;
+const ALL: CountryRaw[] = Object.values(MAP);
+
+/* ---------------- i18n helpers ---------------- */
 const LOCALE_TO_REST: Record<string, string> = {
   en: "en",
   fr: "fra",
@@ -23,35 +43,72 @@ function normalizeLocale(loc: string): string {
   return LOCALE_TO_REST[base] ? base : "en";
 }
 
-function pickTranslationValue(val: unknown): string | undefined {
-  if (!val) return undefined;
-  if (typeof val === "string") return val;
-  if (typeof val === "object" && val !== null) {
-    const anyVal = val as { common?: string; official?: string };
-    return anyVal.common ?? anyVal.official ?? undefined;
+function pickTranslationValue(v: unknown): string | undefined {
+  if (!v) return undefined;
+  if (typeof v === "string") return v.trim() || undefined;
+  if (typeof v === "object") {
+    const { common, official } = v as { common?: unknown; official?: unknown };
+    if (typeof common === "string" && common.trim()) return common.trim();
+    if (typeof official === "string" && official.trim()) return official.trim();
   }
   return undefined;
 }
 
-function localizedName(c: Country, uiLocale: string): string {
+function localizedName(c: CountryRaw, uiLocale: string): string {
   const rcKey = LOCALE_TO_REST[uiLocale];
-  if (rcKey && rcKey !== "en") {
-    const raw = c.translations?.[rcKey];
+  if (rcKey && rcKey !== "en" && c.translations) {
+    const raw = c.translations[rcKey];
     const val = pickTranslationValue(raw);
-    if (val?.trim()) return val;
+    if (val) return val;
   }
   return c.name.common;
 }
 
-const MAP = countries as Record<string, Country>;
-const ALL: Country[] = Object.values(MAP);
+/* ---------------- Data helpers ---------------- */
+function toCapital(v: unknown): string {
+  if (typeof v === "string") return v.trim();
+  if (Array.isArray(v)) {
+    const first = v.find((x) => typeof x === "string" && x.trim().length > 0);
+    return (first ?? "").trim();
+  }
+  return "";
+}
+
+function numberOrNull(v: unknown): number | null {
+  return typeof v === "number" && isFinite(v) ? v : null;
+}
+
+function hasShapeSvg(c: CountryRaw) {
+  const s = c.shapeSvg as GeoShape | null;
+  return (
+    !!s &&
+    Array.isArray(s.paths) &&
+    s.paths.length > 0 &&
+    typeof s.viewBox === "string"
+  );
+}
+
+function hasFlag(c: CountryRaw) {
+  return !!c.flag?.svg;
+}
+
+function hasCoat(c: CountryRaw) {
+  return !!c.coatOfArms?.svg;
+}
+
+function hasCapital(c: CountryRaw) {
+  const cap = toCapital(c.capital);
+  return cap.length > 0 && !["n/a", "na", "-"].includes(cap.toLowerCase());
+}
 
 function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
+
 function randInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 function shuffle<T>(a: T[]): T[] {
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -60,23 +117,9 @@ function shuffle<T>(a: T[]): T[] {
   return a;
 }
 
-function hasShapeSvg(c: Country) {
-  return !!c.shapeSvg?.paths?.length && typeof c.shapeSvg.viewBox === "string";
-}
-function hasFlag(c: Country) {
-  return !!c.flag?.svg;
-}
-function hasCoat(c: Country) {
-  return !!c.coatOfArms?.svg;
-}
-function hasCapital(c: Country) {
-  const cap = (c.capital ?? "").trim();
-  return cap.length > 0 && !["n/a", "na", "-"].includes(cap.toLowerCase());
-}
-
 function buildQCM(
-  pool: Country[],
-  correct: Country,
+  pool: CountryRaw[],
+  correct: CountryRaw,
   kind: "flag" | "coat"
 ): { options: ChoiceOption[]; correctIndex: number } {
   const eligible = pool.filter(
@@ -84,20 +127,26 @@ function buildQCM(
       (kind === "flag" ? hasFlag(c) : hasCoat(c)) && c.iso3 !== correct.iso3
   );
   const distractors = shuffle(eligible).slice(0, 7);
+
+  const correctSvg =
+    kind === "flag" ? correct.flag!.svg! : correct.coatOfArms!.svg!;
   const options: ChoiceOption[] = [
-    ...(kind === "flag"
-      ? [{ iso3: correct.iso3, svg: correct.flag.svg }]
-      : [{ iso3: correct.iso3, svg: correct.coatOfArms!.svg as string }]),
+    { iso3: correct.iso3, svg: correctSvg },
     ...distractors.map((c) => ({
       iso3: c.iso3,
-      svg: kind === "flag" ? c.flag.svg : (c.coatOfArms!.svg as string),
+      svg:
+        kind === "flag"
+          ? (c.flag!.svg as string)
+          : (c.coatOfArms!.svg as string),
     })),
   ];
+
   const order = shuffle(options);
   const correctIndex = order.findIndex((o) => o.iso3 === correct.iso3);
   return { options: order, correctIndex };
 }
 
+/* ---------------- Route ---------------- */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const uiLocale = normalizeLocale(searchParams.get("locale") || "en");
@@ -114,23 +163,13 @@ export async function GET(req: NextRequest) {
   const steps: UltimateStep[] = [];
 
   // 1) Shape
-  steps.push({
-    kind: "shape",
-    shapeSvg: answer.shapeSvg!,
-  });
+  steps.push({ kind: "shape", shapeSvg: answer.shapeSvg as GeoShape });
 
   // 2) Area
-  if (
-    typeof answer.area === "number" &&
-    isFinite(answer.area) &&
-    answer.area > 0
-  ) {
+  const area = numberOrNull(answer.area);
+  if (area && area > 0) {
     const tolPct = randInt(10, 20) / 100;
-    steps.push({
-      kind: "area",
-      area: Math.round(answer.area),
-      tolerancePct: tolPct,
-    });
+    steps.push({ kind: "area", area: Math.round(area), tolerancePct: tolPct });
   }
 
   // 3) Flag
@@ -143,25 +182,21 @@ export async function GET(req: NextRequest) {
 
   // 4) Capital
   if (hasCapital(answer)) {
-    const capEN = answer.capital;
-    const nameLoc = localizedName(answer, uiLocale);
+    const capEN = toCapital(answer.capital);
     steps.push({
       kind: "capital",
       capitalEN: capEN,
-      capitalLocalized: nameLoc,
+      capitalLocalized: localizedName(answer, uiLocale), // (nom du pays localisé — conforme à ton implémentation)
     });
   }
 
   // 5) Population
-  if (
-    typeof answer.population === "number" &&
-    isFinite(answer.population) &&
-    answer.population > 0
-  ) {
+  const population = numberOrNull(answer.population);
+  if (population && population > 0) {
     const tolPct = randInt(10, 20) / 100;
     steps.push({
       kind: "population",
-      population: Math.round(answer.population),
+      population: Math.round(population),
       tolerancePct: tolPct,
     });
   }
@@ -174,7 +209,6 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  // Answer
   const round: UltimateRound = {
     answerIso3: answer.iso3,
     answerEN: answer.name.common,

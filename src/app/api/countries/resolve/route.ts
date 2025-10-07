@@ -1,12 +1,25 @@
 // /app/api/country/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import countries from "@/data/countries.json";
-import type { Country, CountryLite } from "@/app/types/country";
+import countriesJson from "@/data/countries.json";
 import { normalizeBaseLocale, translationKeyOf } from "@/lib/constants";
+import type { CountryLite } from "@/app/types/country";
 
-const MAP = countries as Record<string, Country>;
-const ALL: Country[] = Object.values(MAP);
+type CountryRaw = {
+  iso3: string;
+  name: { common: string; official?: string };
+  translations?: Record<
+    string,
+    string | { common?: string; official?: string } | null
+  > | null;
+  capital?: string | string[] | null;
+  region?: string | null;
+  latlng?: unknown;
+};
 
+const MAP = countriesJson as unknown as Record<string, CountryRaw>;
+const ALL: CountryRaw[] = Object.values(MAP);
+
+/* ---------------- Helpers ---------------- */
 function normalize(s: string) {
   return s
     .toLowerCase()
@@ -28,25 +41,49 @@ function safeLatLng(input: unknown): [number, number] | null {
   return null;
 }
 
-function getTranslatedName(c: Country, baseLocale: string): string {
-  const tr: Record<string, unknown> | undefined = c.translations;
+function pickTranslationValue(v: unknown): string | undefined {
+  if (!v) return undefined;
+  if (typeof v === "string") return v.trim() || undefined;
+  if (typeof v === "object") {
+    const { common, official } = v as { common?: unknown; official?: unknown };
+    if (typeof common === "string" && common.trim()) return common.trim();
+    if (typeof official === "string" && official.trim()) return official.trim();
+  }
+  return undefined;
+}
+
+function getTranslatedName(c: CountryRaw, baseLocale: string): string {
+  const tr = c.translations ?? undefined;
   if (tr) {
     const key3 = translationKeyOf(baseLocale);
-    const v1 = tr[key3];
-    if (typeof v1 === "string" && v1.trim()) return v1;
-    const v2 = tr[baseLocale];
-    if (typeof v2 === "string" && v2.trim()) return v2;
+    if (key3 && key3 in tr) {
+      const v3 = pickTranslationValue(tr[key3]);
+      if (v3) return v3;
+    }
+    if (baseLocale in tr) {
+      const v2 = pickTranslationValue(tr[baseLocale]);
+      if (v2) return v2;
+    }
   }
   return c.name.common;
 }
 
-function toLite(c: Country, baseLocale: string): CountryLite {
+function toCapital(v: unknown): string {
+  if (typeof v === "string") return v.trim();
+  if (Array.isArray(v)) {
+    const first = v.find((x) => typeof x === "string" && x.trim().length > 0);
+    return (first ?? "").trim();
+  }
+  return "";
+}
+
+function toLite(c: CountryRaw, baseLocale: string): CountryLite {
   return {
     iso3: c.iso3,
     nameEN: c.name.common,
     nameLocalized: getTranslatedName(c, baseLocale),
-    capital: c.capital || null,
-    region: c.region || null,
+    capital: toCapital(c.capital) || null,
+    region: (c.region && String(c.region)) || null,
     latlng: safeLatLng(c.latlng),
   };
 }
@@ -75,10 +112,11 @@ function resolveIso3ByName(
 
   const hits: string[] = [];
   for (const c of ALL) {
-    const tr = c.translations as Record<string, unknown> | undefined;
+    const tr = c.translations ?? undefined;
     if (!tr) continue;
     for (const v of Object.values(tr)) {
-      if (typeof v === "string" && normalize(v) === q) {
+      const val = pickTranslationValue(v);
+      if (val && normalize(val) === q) {
         hits.push(c.iso3);
         break;
       }
@@ -86,10 +124,10 @@ function resolveIso3ByName(
   }
   if (hits.length === 1) return hits[0];
   if (hits.length > 1) return "AMBIGUOUS";
-
   return undefined;
 }
 
+/* ---------------- Route ---------------- */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const baseLocale = normalizeBaseLocale(searchParams.get("locale"));
