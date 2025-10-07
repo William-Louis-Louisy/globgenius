@@ -25,7 +25,6 @@ export async function GET() {
     .map((c) => ({ iso3: c.iso3, capital: normalizeCapital(c.capital) }))
     .filter((x) => x.capital.length > 0);
 
-  // dédoublonnage capital|iso3
   const seen = new Set<string>();
   const unique = out.filter((x) => {
     const key = `${x.capital}|${x.iso3}`;
