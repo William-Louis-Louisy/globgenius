@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "Distance de votre réponse",
     "remainingAttempts": "Tentatives restantes",
     "correct": "Bonne réponse !",
-    "wrong": "Mauvaise réponse"
+    "wrong": "Mauvaise réponse",
+    "youLose": "Vous avez perdu !"
   },
   "FlagPage": {
     "title": "Reconnais le drapeau",
@@ -25,8 +26,9 @@
     "validate": "Valider",
     "next": "Question suivante",
     "loading": "Chargement...",
-    "correct": "Correct !",
+    "correct": "Bonne réponse !",
     "wrong": "Mauvaise réponse.",
+    "youLose": "Vous avez perdu !",
     "yourGuesses": "Tes tentatives",
     "hints": "Indices",
     "region": "Région",
@@ -116,7 +118,8 @@
     "firstLetter": "Première lettre",
     "remainingAttempts": "Tentatives restantes",
     "correct": "Bonne réponse !",
-    "wrong": "Mauvaise réponse"
+    "wrong": "Mauvaise réponse",
+    "youLose": "Vous avez perdu !"
   },
   "ThemeToggle": {
     "label": "Changer le thème",
@@ -127,7 +130,6 @@
     "title": "Quiz ultime",
     "description": "6 étapes pour tester ta maîtrise géographique.",
     "loading": "Chargement…",
-
     "titleShape": "Étape 1 — Trouver le pays",
     "titleArea": "Étape 2 — Estimer la superficie (km²)",
     "titleFlag": "Étape 3 — Retrouver le drapeau",
@@ -135,7 +137,6 @@
     "titlePopulation": "Étape 5 — Estimer la population",
     "titleCoat": "Étape 6 — Retrouver les armoiries",
     "currentCountry": "Pays courant",
-
     "showAnswers": "Afficher les reponses",
     "shape": "Pays",
     "area": "Superficie",
@@ -143,17 +144,14 @@
     "capital": "Capitale",
     "population": "Population",
     "coat": "Armoiries",
-
     "placeholderCountry": "Saisis le nom du pays…",
     "placeholderCapital": "Saisis le nom de la capitale…",
     "numberPlaceholder": "Saisis un nombre",
     "tolerance": "Tolérance ±{p}%",
-
     "remainingAttempts": "Tentatives restantes",
     "correct": "Bonne réponse !",
     "wrong": "Mauvaise réponse",
     "pickSuggestion": "Veuillez choisir une suggestion de la liste",
-
     "seriesDone": "Fin de la série",
     "score": "Ton score :",
     "message": {
@@ -162,6 +160,7 @@
       "mid": "Pas mal, mais tu peux faire mieux",
       "high": "Bravo, c'est très fort !"
     },
-    "nextSeries": "Série suivante"
+    "nextSeries": "Série suivante",
+    "areaTipLabel": "Pour t'aider voici trois exemples :"
   }
 }

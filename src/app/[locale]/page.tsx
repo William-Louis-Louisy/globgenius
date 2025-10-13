@@ -26,10 +26,7 @@ export default function HomePage() {
       </div>
       <MaxWidthWrapper className="flex flex-col items-center gap-8 mt-8 pb-12">
         <div className="flex flex-col max-w-lg md:flex-row items-center justify-center w-full gap-4">
-          <Link
-            href="/quiz/how-to-play"
-            className="cta border border-foreground"
-          >
+          <Link href="/how-to-play" className="cta border border-foreground">
             {t("howToPlay")}
           </Link>
           <Link
@@ -40,7 +37,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {gameModes.map((gm) => (
             <GameModeCard
               key={gm.key}

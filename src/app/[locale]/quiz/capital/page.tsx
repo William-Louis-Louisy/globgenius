@@ -10,6 +10,7 @@ import AttemptsFeedback from "@/components/quiz/AttemptsFeedback";
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper";
 import AnswerAutocomplete from "@/components/quiz/AnswerAutocomplete";
 import LoadingState from "@/components/quiz/LoadingState";
+import QuestionWrapper from "@/components/animated/QuestionWrapper";
 
 const ATTEMPTS = 5;
 
@@ -48,13 +49,13 @@ export default function CapitalQuizPage() {
         />
         <>
           {/* QUESTION = la capitale */}
-          <div className="flex items-center justify-center mb-6">
+          <QuestionWrapper>
             <div className="rounded-xl border-8 px-8 py-4 bg-element/70">
               <p className="text-3xl font-bold mt-1 select-none">
                 {quiz.capital}
               </p>
             </div>
-          </div>
+          </QuestionWrapper>
 
           {/* INPUT + AUTOCOMPLETE */}
           <form

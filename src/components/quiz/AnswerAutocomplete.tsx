@@ -67,7 +67,7 @@ export default function AnswerAutocomplete({
               <ComboboxOption
                 key={s.iso3 + s.name}
                 value={s.name}
-                className="px-4 py-2 text-sm cursor-pointer hover:bg-white/5 data-[focus]:bg-white/5 data-[selected]:bg-white/10"
+                className="px-4 py-2 text-sm cursor-pointer hover:bg-white/5 data-[focus]:bg-accent/35 data-[selected]:bg-accent/35"
               >
                 {s.name}
               </ComboboxOption>

@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "与你的答案的距离",
     "remainingAttempts": "剩余尝试次数",
     "correct": "答对了！",
-    "wrong": "回答错误"
+    "wrong": "回答错误",
+    "youLose": "你输了！"
   },
   "FlagPage": {
     "title": "猜旗帜",
@@ -27,6 +28,7 @@
     "loading": "加载中…",
     "correct": "答对了！",
     "wrong": "回答错误。",
+    "youLose": "你输了！",
     "yourGuesses": "你的猜测",
     "hints": "提示",
     "region": "地区",
@@ -116,7 +118,8 @@
     "firstLetter": "首字母",
     "remainingAttempts": "剩余尝试次数",
     "correct": "答对了！",
-    "wrong": "回答错误"
+    "wrong": "回答错误",
+    "youLose": "你输了！"
   },
   "ThemeToggle": {
     "label": "切换主题",
@@ -157,6 +160,7 @@
       "mid": "不错——还能更好。",
       "high": "太棒了，表现出色！"
     },
-    "nextSeries": "下一轮"
+    "nextSeries": "下一轮",
+    "areaTipLabel": "为了帮你，这里有三个示例："
   }
 }

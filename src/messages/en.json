@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "Distance from your guess",
     "remainingAttempts": "Remaining attempts",
     "correct": "Correct!",
-    "wrong": "Wrong answer"
+    "wrong": "Wrong answer",
+    "youLose": "You lost!"
   },
   "FlagPage": {
     "title": "Guess the flag",
@@ -27,6 +28,7 @@
     "loading": "Loading...",
     "correct": "Correct!",
     "wrong": "Wrong answer.",
+    "youLose": "You lost!",
     "yourGuesses": "Your guesses",
     "hints": "Hints",
     "region": "Region",
@@ -116,7 +118,8 @@
     "firstLetter": "First letter",
     "remainingAttempts": "Remaining attempts",
     "correct": "Correct!",
-    "wrong": "Wrong answer"
+    "wrong": "Wrong answer",
+    "youLose": "You lost!"
   },
   "ThemeToggle": {
     "label": "Change theme",
@@ -157,6 +160,7 @@
       "mid": "Pretty good — you can push further.",
       "high": "Awesome, that’s impressive!"
     },
-    "nextSeries": "Next series"
+    "nextSeries": "Next series",
+    "areaTipLabel": "To help you, here are three examples:"
   }
 }

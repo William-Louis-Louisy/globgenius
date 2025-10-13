@@ -20,7 +20,8 @@ export default function ShapeSilhouette({
     <svg
       viewBox={viewBox}
       className={
-        className ?? "w-[360px] h-[240px] rounded-lg border bg-black/10"
+        className ??
+        "w-[360px] h-[240px] rounded-lg border bg-black/10"
       }
       role="img"
       aria-label="Country shape"

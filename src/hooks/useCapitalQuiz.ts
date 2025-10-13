@@ -9,6 +9,8 @@ import { normalizeText, haversineKm } from "@/lib/geo";
 import { Feedback, Guess, Options } from "@/app/types/game";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { CountryLite, NameSuggestion } from "@/app/types/country";
+import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 type Hints = {
   region?: string | null;
@@ -45,6 +47,7 @@ export function useCapitalQuiz({
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [attemptsLeft, setAttemptsLeft] = useState<number>(attempts);
   const [feedback, setFeedback] = useState<Feedback>("idle");
+  const t = useTranslations("CapitalPage");
 
   useEffect(() => {
     let disposed = false;
@@ -119,6 +122,7 @@ export function useCapitalQuiz({
       if (ok) {
         setGuesses((g) => [...g, guess]);
         setFeedback("correct");
+        toast.success(t("correct"));
         return;
       }
 
@@ -137,7 +141,12 @@ export function useCapitalQuiz({
       }
 
       setGuesses((g) => [...g, guess]);
-      if (next <= 0) setFeedback("wrong");
+      if (next <= 0) {
+        setFeedback("wrong");
+        toast.error(t("youLose"));
+      } else {
+        toast.error(t("wrong"));
+      }
     },
     [
       feedback,
@@ -166,6 +175,7 @@ export function useCapitalQuiz({
 
   const nextQuestion = useCallback(async () => {
     if (feedback === "idle" && attemptsLeft === attempts) return;
+    toast.dismiss();
     await load();
   }, [attempts, attemptsLeft, feedback, load]);
 

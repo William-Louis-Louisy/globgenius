@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       { hostname: "lh3.googleusercontent.com" },
       { hostname: "flagcdn.com" },
       { hostname: "mainfacts.com" },
+      { hostname: "upload.wikimedia.org" },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "script-src 'none'; sandbox;",

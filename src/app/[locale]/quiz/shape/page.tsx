@@ -12,6 +12,7 @@ import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper";
 import AnswerAutocomplete from "@/components/quiz/AnswerAutocomplete";
 import QuizHeading from "@/components/quiz/QuizHeading";
 import LoadingState from "@/components/quiz/LoadingState";
+import QuestionWrapper from "@/components/animated/QuestionWrapper";
 
 const ATTEMPTS = 5;
 
@@ -50,14 +51,14 @@ export default function ShapeQuizPage() {
         />
         <>
           {/* SHAPE */}
-          <div className="flex items-center justify-center mb-6 select-none">
+          <QuestionWrapper>
             {quiz.shape && (
               <ShapeSilhouette
                 shape={quiz.shape}
-                className="w-[360px] h-[240px] rounded-lg border bg-black/10"
+                className="w-[360px] h-[240px] rounded-lg border border-foreground/10 bg-black/10"
               />
             )}
-          </div>
+          </QuestionWrapper>
 
           {/* INPUT + AUTOCOMPLETE */}
           <form

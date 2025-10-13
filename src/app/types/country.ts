@@ -1,7 +1,6 @@
 import { GeoShape } from "./geojson";
 
 export interface Country {
-  iso2: string;
   iso3: string;
   name: { common: string; official: string };
   translations: Record<string, string>;
