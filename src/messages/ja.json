@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "あなたの解答との距離",
     "remainingAttempts": "残りの試行回数",
     "correct": "正解！",
-    "wrong": "不正解"
+    "wrong": "不正解",
+    "youLose": "あなたは負けました"
   },
   "FlagPage": {
     "title": "国旗当て",
@@ -27,6 +28,7 @@
     "loading": "読み込み中…",
     "correct": "正解！",
     "wrong": "不正解。",
+    "youLose": "あなたは負けました",
     "yourGuesses": "あなたの解答",
     "hints": "ヒント",
     "region": "地域",
@@ -116,7 +118,8 @@
     "firstLetter": "頭文字",
     "remainingAttempts": "残りの試行回数",
     "correct": "正解！",
-    "wrong": "不正解"
+    "wrong": "不正解",
+    "youLose": "あなたは負けました"
   },
   "ThemeToggle": {
     "label": "テーマを変更",
@@ -157,6 +160,7 @@
       "mid": "いい感じ — もう一歩！",
       "high": "最高！お見事！"
     },
-    "nextSeries": "次のシリーズ"
+    "nextSeries": "次のシリーズ",
+    "areaTipLabel": "参考として、次の3つの例をご覧ください："
   }
 }

@@ -15,6 +15,8 @@ import AttemptsFeedback from "@/components/quiz/AttemptsFeedback";
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper";
 import VisualOptionsGrid from "@/components/quiz/VisualOptionsGrid";
 import AnswerAutocomplete from "@/components/quiz/AnswerAutocomplete";
+import QuestionWrapper from "@/components/animated/QuestionWrapper";
+import AreaTip from "@/components/cards/AreaTip";
 
 export default function UltimateQuizPage() {
   const locale = useLocale();
@@ -122,17 +124,17 @@ export default function UltimateQuizPage() {
         <div className="mb-6">
           {c.kind === "shape" && (
             <>
-              <div className="relative flex justify-center select-none">
+              <QuestionWrapper className="relative">
                 <ShapeSilhouette
                   shape={c.shapeSvg}
-                  className="w-[420px] h-[280px] rounded-lg border bg-black/10"
+                  className="w-[420px] h-[280px] rounded-lg border border-foreground/10 bg-black/10"
                 />
                 {quiz.feedback !== "idle" && (
                   <span className="absolute bottom-4 left-1/2 -translate-x-1/2 font-semibold text-sm px-3 py-1 bg-accent">
                     {quiz.reveal}
                   </span>
                 )}
-              </div>
+              </QuestionWrapper>
               <div className="mt-6">
                 <AnswerAutocomplete
                   value={inputs.selected}
@@ -187,6 +189,13 @@ export default function UltimateQuizPage() {
               toleranceText={t("tolerance", {
                 p: Math.round(c.tolerancePct * 100),
               })}
+            />
+          )}
+
+          {c.kind === "area" && (
+            <AreaTip
+              iso3={quiz.round?.answerIso3 || ""}
+              label={t("areaTipLabel")}
             />
           )}
         </div>

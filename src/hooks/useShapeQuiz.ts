@@ -11,6 +11,8 @@ import type { ShapeRandomResponse } from "@/services/countries";
 import type { Feedback, Guess, Options } from "@/app/types/game";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { CountryLite, NameSuggestion } from "@/app/types/country";
+import { useTranslations } from "next-intl";
+import { toast } from "react-toastify";
 
 type Hints = {
   region?: string | null;
@@ -44,14 +46,13 @@ export function useShapeQuiz({
   const [shape, setShape] = useState<GeoShape | null>(null);
   const [answerEN, setAnswerEN] = useState<string>("");
   const [answerLocalized, setAnswerLocalized] = useState<string>("");
-
   const [answerDetails, setAnswerDetails] = useState<CountryLite | null>(null);
   const [suggestions, setSuggestions] = useState<NameSuggestion[]>([]);
   const [guesses, setGuesses] = useState<Guess[]>([]);
   const [attemptsLeft, setAttemptsLeft] = useState<number>(attempts);
   const [feedback, setFeedback] = useState<Feedback>("idle");
+  const t = useTranslations("ShapePage");
 
-  // suggestions une fois
   useEffect(() => {
     let disposed = false;
     getCountryNames(locale)
@@ -107,18 +108,15 @@ export function useShapeQuiz({
       const normAnswerLoc = normalizeText(answerLocalized);
       const normAnswerEN = normalizeText(answerEN);
 
-      // Essaie de retrouver la suggestion à partir du texte saisi
       const matchedSuggestion = suggestions.find(
         (s) => normalizeText(s.name) === normCandidate
       );
 
-      // 1) Check ISO3 si possible
       let ok =
         !!matchedSuggestion &&
         !!answerDetails?.iso3 &&
         matchedSuggestion.iso3 === answerDetails.iso3;
 
-      // 2) Fallback: égalité stricte (normalisée) sur nom localisé/EN
       if (!ok) {
         ok = normCandidate === normAnswerLoc || normCandidate === normAnswerEN;
       }
@@ -128,10 +126,10 @@ export function useShapeQuiz({
       if (ok) {
         setGuesses((g) => [...g, guess]);
         setFeedback("correct");
+        toast.success(t("correct"));
         return;
       }
 
-      // Mauvaise réponse -> décrémente et calcule la distance si on peut
       const next = attemptsLeft - 1;
       setAttemptsLeft(next);
 
@@ -147,7 +145,12 @@ export function useShapeQuiz({
       }
 
       setGuesses((g) => [...g, guess]);
-      if (next <= 0) setFeedback("wrong");
+      if (next <= 0) {
+        setFeedback("wrong");
+        toast.error(t("youLose"));
+      } else {
+        toast.error(t("wrong"));
+      }
     },
     [
       feedback,
@@ -178,6 +181,7 @@ export function useShapeQuiz({
 
   const nextQuestion = useCallback(async () => {
     if (feedback === "idle" && attemptsLeft === attempts) return;
+    toast.dismiss();
     await load();
   }, [attempts, attemptsLeft, feedback, load]);
 

@@ -1,4 +1,3 @@
-// /app/api/country/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import countriesJson from "@/data/countries.json";
 import { normalizeBaseLocale, translationKeyOf } from "@/lib/constants";

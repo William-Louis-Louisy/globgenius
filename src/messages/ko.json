@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "입력한 답과의 거리",
     "remainingAttempts": "남은 시도",
     "correct": "정답!",
-    "wrong": "오답입니다"
+    "wrong": "오답입니다",
+    "youLose": "답이 맞지 않아요!"
   },
   "FlagPage": {
     "title": "국기 맞히기",
@@ -27,6 +28,7 @@
     "loading": "로딩 중…",
     "correct": "정답!",
     "wrong": "오답입니다.",
+    "youLose": "답이 맞지 않아요!",
     "yourGuesses": "내 시도",
     "hints": "힌트",
     "region": "지역",
@@ -116,7 +118,8 @@
     "firstLetter": "첫 글자",
     "remainingAttempts": "남은 시도",
     "correct": "정답!",
-    "wrong": "오답입니다"
+    "wrong": "오답입니다",
+    "youLose": "답이 맞지 않아요!"
   },
   "ThemeToggle": {
     "label": "테마 변경",
@@ -157,6 +160,7 @@
       "mid": "괜찮아요 — 아직 여유 있네요.",
       "high": "대단해요, 멋진 실력!"
     },
-    "nextSeries": "다음 시리즈"
+    "nextSeries": "다음 시리즈",
+    "areaTipLabel": "도움이 되도록 예시 세 가지를 보여줄게요:"
   }
 }

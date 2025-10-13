@@ -19,7 +19,7 @@ import {
   ToastLabels,
   AttemptsConfig,
 } from "@/app/types/game";
-import { Flip, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { DEFAULT_ATTEMPTS } from "@/lib/constants";
 import { UseUltimateQuizAPI } from "@/app/types/api";
 import { haversineKm, normalizeText } from "@/lib/geo";
@@ -48,17 +48,7 @@ const createSubmitHandlers = (
     actions.setFeedback("correct");
     actions.setReveal(revealText);
     if (firstTry) actions.incrementScore();
-    toast.success(L.correct, {
-      position: "top-center",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Flip,
-    });
+    toast.success(L.correct);
   };
 
   const handleWrongAnswer = (nextAttempts: number, revealText: string) => {
@@ -66,17 +56,7 @@ const createSubmitHandlers = (
     if (nextAttempts <= 0) {
       actions.setFeedback("wrong");
       actions.setReveal(revealText);
-      toast.error(L.wrong, {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        transition: Flip,
-      });
+      toast.error(L.wrong);
     }
   };
 

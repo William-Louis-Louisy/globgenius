@@ -7,10 +7,11 @@ import HintsPanel from "@/components/quiz/HintsPanel";
 import { useLocale, useTranslations } from "next-intl";
 import QuizActions from "@/components/quiz/QuizActions";
 import QuizHeading from "@/components/quiz/QuizHeading";
+import LoadingState from "@/components/quiz/LoadingState";
 import AttemptsFeedback from "@/components/quiz/AttemptsFeedback";
 import MaxWidthWrapper from "@/components/commons/MaxWidthWrapper";
+import QuestionWrapper from "@/components/animated/QuestionWrapper";
 import AnswerAutocomplete from "@/components/quiz/AnswerAutocomplete";
-import LoadingState from "@/components/quiz/LoadingState";
 
 const ATTEMPTS = 5;
 
@@ -50,7 +51,7 @@ export default function FlagQuizPage() {
         />
         <>
           {/* FLAG */}
-          <div className="flex items-center justify-center mb-6">
+          <QuestionWrapper>
             <Image
               src={quiz.flagUrl}
               alt="Country flag"
@@ -58,7 +59,7 @@ export default function FlagQuizPage() {
               height={200}
               className="w-72 h-44 object-contain rounded-lg border"
             />
-          </div>
+          </QuestionWrapper>
 
           {/* INPUT + AUTOCOMPLETE */}
           <form

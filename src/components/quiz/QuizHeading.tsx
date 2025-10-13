@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 
 interface Props {
   title: string;
@@ -15,12 +16,31 @@ export default function QuizHeading({
 }: Props) {
   return (
     <header className="mb-6">
-      <h1 className="text-2xl md:text-3xl font-montserrat font-bold">
+      <motion.h1
+        className="text-2xl md:text-3xl font-montserrat font-bold"
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{
+          opacity: 1,
+          scaleX: 1,
+          transformOrigin: "left",
+          transition: { duration: 0.22, ease: [0.2, 0.7, 0.3, 1] },
+        }}
+      >
         {title}
-      </h1>
-      <p className="text-sm opacity-70">
+      </motion.h1>
+
+      <motion.p
+        className="text-sm opacity-70"
+        initial={{ opacity: 0, scaleX: 0 }}
+        animate={{
+          opacity: 1,
+          scaleX: 1,
+          transformOrigin: "right",
+          transition: { duration: 0.22, ease: [0.2, 0.7, 0.3, 1] },
+        }}
+      >
         {description}, {attempts} {maxAttempts}
-      </p>
+      </motion.p>
     </header>
   );
 }

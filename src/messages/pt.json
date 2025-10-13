@@ -14,7 +14,8 @@
     "distanceFromYourGuess": "Distância do seu palpite",
     "remainingAttempts": "Tentativas restantes",
     "correct": "Correto!",
-    "wrong": "Resposta incorreta"
+    "wrong": "Resposta incorreta",
+    "youLose": "Voce perdeu!"
   },
   "FlagPage": {
     "title": "Adivinhe a bandeira",
@@ -32,7 +33,8 @@
     "region": "Região",
     "capital": "Capital",
     "firstLetter": "Primeira letra",
-    "distanceFromYourGuess": "Distância"
+    "distanceFromYourGuess": "Distância",
+    "youLose": "Voce perdeu!"
   },
   "Header": {
     "hello": "Olá",
@@ -116,7 +118,8 @@
     "firstLetter": "Primeira letra",
     "remainingAttempts": "Tentativas restantes",
     "correct": "Correto!",
-    "wrong": "Resposta incorreta"
+    "wrong": "Resposta incorreta",
+    "youLose": "Voce perdeu!"
   },
   "ThemeToggle": {
     "label": "Mudar o tema",
@@ -157,6 +160,7 @@
       "mid": "Bom — ainda há espaço para evoluir.",
       "high": "Excelente, mandou muito bem!"
     },
-    "nextSeries": "Próxima série"
+    "nextSeries": "Próxima série",
+    "areaTipLabel": "Para te ajudar, aqui vão três exemplos:"
   }
 }
