@@ -1,4 +1,9 @@
 {
+  "BuyMeCoffee": {
+    "alt": "Globe terrestre anthropomorphisé, en larmes, à côté d’une tasse de café",
+    "title": "Merci beaucoup d'utiliser GlobGenius !",
+    "description": "Si vous souhaitez m'encourager et me soutenir dans la création de nouveaux jeux, vous pouvez m'offrir un café !"
+  },
   "CapitalPage": {
     "title": "Devine le pays à partir de sa capitale",
     "description": "Saisis le nom du pays correspondant à la capitale affichée",
@@ -42,12 +47,15 @@
     "login": "Se connecter",
     "openUserMenu": "Ouvrir le menu utilisateur",
     "openMainMenu": "Ouvrir le menu principal",
+    "myOtherGames": "Mes autres jeux",
     "navigation": {
       "flags": "Drapeaux",
       "capitals": "Capitales",
       "shapes": "Formes",
       "ultimate": "Ultime",
-      "howToPlay": "Comment jouer"
+      "howToPlay": "Comment jouer",
+      "home": "Accueil",
+      "buyMeCoffee": "M'offrir un café"
     }
   },
   "HomePage": {

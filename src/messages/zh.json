@@ -1,4 +1,9 @@
 {
+  "BuyMeCoffee": {
+    "alt": "拟人化的地球在流泪，旁边放着一杯咖啡",
+    "title": "非常感谢你使用 GlobGenius！",
+    "description": "如果你想鼓励并支持我继续制作新游戏，可以请我喝杯咖啡！"
+  },
   "CapitalPage": {
     "title": "根据首都猜国家",
     "description": "输入与所示首都对应的国家名称",
@@ -42,12 +47,15 @@
     "login": "登录",
     "openUserMenu": "打开用户菜单",
     "openMainMenu": "打开主菜单",
+    "myOtherGames": "我的其他游戏",
     "navigation": {
       "flags": "旗帜",
       "capitals": "首都",
       "shapes": "形状",
       "ultimate": "终极",
-      "howToPlay": "如何玩"
+      "howToPlay": "如何玩",
+      "home": "主页",
+      "buyMeCoffee": "请我喝咖啡"
     }
   },
   "HomePage": {

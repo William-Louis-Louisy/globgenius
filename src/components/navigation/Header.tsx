@@ -17,6 +17,8 @@ export default function Header() {
   const pathname = usePathname();
   const t = useTranslations("Header");
 
+  const filteredLinks = navigationLinks.filter((link) => link.header);
+
   return (
     <Disclosure as="nav" className={"fixed inset-x-0 top-0 z-50 bg-background"}>
       {/* Header */}
@@ -27,7 +29,7 @@ export default function Header() {
           </div>
           {/* Navigation */}
           <div className="hidden lg:ml-6 lg:flex lg:space-x-8 items-center">
-            {navigationLinks.map((link) => (
+            {filteredLinks.map((link) => (
               <Link
                 key={link.tradKey}
                 href={link.url}
@@ -128,7 +130,7 @@ export default function Header() {
       {/* Mobile Menu */}
       <DisclosurePanel className="lg:hidden h-page">
         <div className="space-y-1 py-6">
-          {navigationLinks.map((link) => (
+          {filteredLinks.map((link) => (
             <DisclosureButton
               key={link.tradKey}
               as={Link}
@@ -143,6 +145,11 @@ export default function Header() {
               {t(`navigation.${link.tradKey}`)}
             </DisclosureButton>
           ))}
+        </div>
+
+        <div className="absolute bottom-4 inset-x-0 inline-flex items-center justify-end gap-6 w-full px-4">
+          <ThemeToggle />
+          <LocaleSwitch />
         </div>
       </DisclosurePanel>
     </Disclosure>
