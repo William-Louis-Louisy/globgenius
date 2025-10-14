@@ -113,7 +113,7 @@ export default function FlagQuizPage() {
 
             {/* Actions */}
             <QuizActions
-              autoMode="on-correct"
+              autoMode="off"
               feedback={quiz.feedback}
               onSubmit={submitCurrent}
               onNext={async () => {

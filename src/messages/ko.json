@@ -1,4 +1,9 @@
 {
+  "BuyMeCoffee": {
+    "alt": "의인화된 지구본이 눈물을 흘리며 커피 잔 옆에 서 있는 모습",
+    "title": "GlobGenius를 이용해 주셔서 감사합니다!",
+    "description": "새로운 게임 제작을 응원하고 싶다면, 커피 한 잔 사주실 수 있어요!"
+  },
   "CapitalPage": {
     "title": "수도에서 나라 맞히기",
     "description": "표시된 수도에 해당하는 나라 이름을 입력하세요",
@@ -42,12 +47,15 @@
     "login": "로그인",
     "openUserMenu": "사용자 메뉴 열기",
     "openMainMenu": "메인 메뉴 열기",
+    "myOtherGames": "다른 게임들",
     "navigation": {
       "flags": "국기",
       "capitals": "수도",
       "shapes": "모양",
       "ultimate": "얼티밋",
-      "howToPlay": "플레이 방법"
+      "howToPlay": "플레이 방법",
+      "home": "홈",
+      "buyMeCoffee": "촌머 카페"
     }
   },
   "HomePage": {

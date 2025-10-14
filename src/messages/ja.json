@@ -1,4 +1,9 @@
 {
+  "BuyMeCoffee": {
+    "alt": "擬人化された地球が涙を流し、コーヒーカップの横にいるイラスト",
+    "title": "GlobGenius をご利用いただきありがとうございます！",
+    "description": "新しいゲームづくりを応援していただけるなら、コーヒーでサポートしてくれると嬉しいです！"
+  },
   "CapitalPage": {
     "title": "首都から国名を当てよう",
     "description": "表示された首都に対応する国名を入力しよう",
@@ -42,12 +47,15 @@
     "login": "ログイン",
     "openUserMenu": "ユーザーメニューを開く",
     "openMainMenu": "メインメニューを開く",
+    "myOtherGames": "他のゲーム",
     "navigation": {
       "flags": "国旗",
       "capitals": "首都",
       "shapes": "形",
       "ultimate": "アルティメット",
-      "howToPlay": "遊び方"
+      "howToPlay": "遊び方",
+      "home": "ホーム",
+      "buyMeCoffee": "コーヒーを購入"
     }
   },
   "HomePage": {

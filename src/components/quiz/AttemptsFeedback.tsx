@@ -18,17 +18,17 @@ export default function AttemptsFeedback({
   labels,
 }: Props) {
   return (
-    <div className="flex items-center justify-between text-sm">
-      <span className="opacity-70">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">
+      <span className="opacity-70 text-left">
         {labels.remainingAttempts} : {attemptsLeft}
       </span>
       {feedback === "correct" && (
-        <span className="text-accent font-semibold">
+        <span className="text-accent font-semibold text-right">
           ✅ {labels.correct} — {answerLocalized}
         </span>
       )}
       {feedback === "wrong" && (
-        <span className="text-red-400 font-semibold">
+        <span className="text-red-400 font-semibold text-right">
           ❌ {labels.wrong} — {answerLocalized}
         </span>
       )}

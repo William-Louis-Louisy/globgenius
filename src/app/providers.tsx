@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/navigation/Footer";
 import Header from "@/components/navigation/Header";
 import { SessionProvider } from "next-auth/react";
 import { NextIntlClientProvider } from "next-intl";
@@ -29,6 +30,7 @@ export default function Providers({
         >
           <Header />
           {children}
+          <Footer />
           <ToastContainer
             position="top-center"
             autoClose={3000}

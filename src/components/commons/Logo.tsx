@@ -8,9 +8,7 @@ export default function Logo() {
       <div className="relative size-12 overflow-hidden">
         <Image src="/globo.png" alt="logo" fill className="object-contain" />
       </div>
-      <span className="text-2xl font-quicksand font-black hidden md:inline">
-        GlobGenius
-      </span>
+      <span className="text-2xl font-quicksand font-black">GlobGenius</span>
     </Link>
   );
 }

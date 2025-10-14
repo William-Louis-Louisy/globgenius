@@ -55,7 +55,7 @@ export default function ScoreScreen({
         {/* HEADER */}
         <h1 className="text-3xl font-montserrat font-bold mb-2">{title}</h1>
         <p className="mb-6">{seriesDone}</p>
-        <div className="rounded-lg bg-element/70 border border-foreground/10 p-6 mb-6 grid grid-cols-1 lg:grid-cols-2 items-center divide-x divide-foreground/10 gap-4">
+        <div className="rounded-lg bg-element/70 border border-foreground/10 p-6 mb-6 grid grid-cols-1 lg:grid-cols-2 items-center divide-y md:divide-x md:divide-y-0 divide-foreground/10 gap-4">
           {/* SCORE */}
           <div className="flex flex-col items-center gap-4">
             <p className="text-2xl font-bold">{scoreLabel}</p>

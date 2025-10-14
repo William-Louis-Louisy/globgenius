@@ -9,15 +9,17 @@ import {
 } from "@headlessui/react";
 import { routing } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-import { Check, CaretUpDown } from "@phosphor-icons/react";
+import { CaretUpDown } from "@phosphor-icons/react";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/useMobile";
 
 export default function LocaleSwitch() {
   const t = useTranslations("LocaleSwitch");
   const currentLocale = useLocale();
   const router = useRouter();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const isMobile = useIsMobile();
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
   const params = useParams();
@@ -46,7 +48,10 @@ export default function LocaleSwitch() {
     <div>
       <Listbox value={selected} onChange={handleChange}>
         <div className="relative text-sm">
-          <ListboxButton className="relative w-full cursor-default rounded-md bg-element py-2 pl-3 pr-10 text-left shadow-sm ring-0 focus:ring-0 focus:outline-none">
+          <ListboxButton
+            aria-busy={isPending}
+            className="relative w-full cursor-default rounded-md bg-element py-2 pl-3 pr-10 text-left shadow-sm ring-0 focus:ring-0 focus:outline-none"
+          >
             <span className="block truncate">{selected.label}</span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <CaretUpDown aria-hidden="true" className="size-4" />
@@ -54,33 +59,31 @@ export default function LocaleSwitch() {
           </ListboxButton>
           <ListboxOptions
             modal={false}
-            className="absolute z-10 mt-1 max-h-60 w-fit overflow-auto rounded-md bg-element py-1 text-base shadow-lg ring-0 focus:outline-none sm:text-sm"
+            className={cn(
+              "absolute z-10 max-h-60 w-full overflow-auto rounded-md bg-element py-1 text-base shadow-lg focus:outline-none sm:text-sm",
+              isMobile ? "bottom-full mb-1" : "top-full mt-1"
+            )}
           >
             {locales.map((loc) => (
               <ListboxOption
                 key={loc.id}
                 value={loc}
+                title={loc.label}
                 className={({ focus }) =>
-                  `relative cursor-default select-none py-2 pl-4 pr-9 ${
+                  cn(
+                    "relative cursor-default select-none py-2 pl-4 pr-9 text-xs",
                     focus ? "bg-foreground text-background" : "text-foreground"
-                  }`
+                  )
                 }
               >
                 {({ selected: isSelected }) => (
-                  <>
-                    <span
-                      className={`block truncate ${
-                        isSelected ? "font-semibold" : "font-normal"
-                      }`}
-                    >
-                      {loc.label}
-                    </span>
-                    {isSelected && (
-                      <span className="absolute inset-y-0 right-0 flex items-center pr-4">
-                        <Check aria-hidden="true" className="size-4" />
-                      </span>
-                    )}
-                  </>
+                  <span
+                    className={`block ${
+                      isSelected ? "font-bold" : "font-normal"
+                    }`}
+                  >
+                    {loc.label}
+                  </span>
                 )}
               </ListboxOption>
             ))}

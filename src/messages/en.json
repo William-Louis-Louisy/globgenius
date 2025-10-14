@@ -1,4 +1,9 @@
 {
+  "BuyMeCoffee": {
+    "alt": "Anthropomorphized globe in tears next to a cup of coffee",
+    "title": "Thanks a lot for using GlobGenius!",
+    "description": "If you'd like to encourage and support me in creating new games, you can buy me a coffee!"
+  },
   "CapitalPage": {
     "title": "Guess the country from its capital",
     "description": "Enter the name of the country that matches the shown capital",
@@ -42,12 +47,15 @@
     "login": "Login",
     "openUserMenu": "Open user menu",
     "openMainMenu": "Open main menu",
+    "myOtherGames": "My other games",
     "navigation": {
       "flags": "Flags",
       "capitals": "Capitals",
       "shapes": "Shapes",
       "ultimate": "Ultimate",
-      "howToPlay": "How to play"
+      "howToPlay": "How to play",
+      "home": "Home",
+      "buyMeCoffee": "Buy me a coffee"
     }
   },
   "HomePage": {
