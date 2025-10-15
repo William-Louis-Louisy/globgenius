@@ -65,6 +65,7 @@
     "playNow": "Play now",
     "howToPlay": "How to play?",
     "pickYourMode": "Pick your mode",
+    "otherGames": "If you speak French fluently, you can also try the following game:",
     "flag": {
       "title": "Flag",
       "pitch": "Guess the country from its flag."
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "Ultimate",
       "pitch": "Shape → Flag → Capital. Chain them without a mistake!"
+    },
+    "gaufrle": {
+      "title": "Gaufrle — Turn chaos into words!",
+      "pitch": "Discover the daily game that will put your vocabulary to the test.",
+      "visit": "Visit the site"
     }
   },
   "HowToPlay": {

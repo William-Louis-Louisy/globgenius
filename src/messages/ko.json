@@ -65,6 +65,7 @@
     "playNow": "지금 플레이",
     "howToPlay": "플레이 방법",
     "pickYourMode": "모드를 선택하세요",
+    "otherGames": "프랑스어에 능통하다면 다음 게임도 한번 즐겨 보세요:",
     "flag": {
       "title": "국기",
       "pitch": "국기를 보고 나라를 맞히세요."
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "얼티밋",
       "pitch": "모양 → 국기 → 수도. 한 번도 틀리지 말고 연속으로 맞히세요!"
+    },
+    "gaufrle": {
+      "title": "Gaufrle — 혼돈을 단어로 바꿔 보세요!",
+      "pitch": "어휘력을 시험하는 데일리 게임을 만나보세요.",
+      "visit": "사이트 방문"
     }
   },
   "HowToPlay": {

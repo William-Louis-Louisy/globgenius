@@ -65,6 +65,7 @@
     "playNow": "今すぐプレイ",
     "howToPlay": "遊び方",
     "pickYourMode": "モードを選ぶ",
+    "otherGames": "フランス語が堪能なら、次のゲームも試してみてください。",
     "flag": {
       "title": "国旗",
       "pitch": "国旗から国名を当てよう。"
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "アルティメット",
       "pitch": "形 → 国旗 → 首都。ミスなく連続正解！"
+    },
+    "gaufrle": {
+      "title": "Gaufrle — カオスを言葉に！",
+      "pitch": "語彙力を試すデイリーゲームを体験しよう。",
+      "visit": "サイトへ"
     }
   },
   "HowToPlay": {

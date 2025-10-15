@@ -72,8 +72,18 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  @apply font-montserrat font-bold;
+h1,
+h2 {
+  @apply font-bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-montserrat;
 }
 
 .cta {

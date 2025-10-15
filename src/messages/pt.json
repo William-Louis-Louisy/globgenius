@@ -65,6 +65,7 @@
     "playNow": "Jogar agora",
     "howToPlay": "Como jogar?",
     "pickYourMode": "Escolha seu modo",
+    "otherGames": "Se você fala francês fluentemente, também pode experimentar o jogo a seguir:",
     "flag": {
       "title": "Bandeira",
       "pitch": "Adivinhe o país a partir de sua bandeira."
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "Definitivo",
       "pitch": "Forma → Bandeira → Capital. Faça a sequência sem errar!"
+    },
+    "gaufrle": {
+      "title": "Gaufrle — Transforme o caos em palavras!",
+      "pitch": "Conheça o jogo diário que vai colocar seu vocabulário à prova.",
+      "visit": "Visitar o site"
     }
   },
   "HowToPlay": {
