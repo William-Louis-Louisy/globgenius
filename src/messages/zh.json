@@ -65,6 +65,7 @@
     "playNow": "立即开始",
     "howToPlay": "怎么玩？",
     "pickYourMode": "选择模式",
+    "otherGames": "如果你能流利使用法语，也可以试试下列游戏：",
     "flag": {
       "title": "旗帜",
       "pitch": "根据旗帜猜国家。"
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "终极",
       "pitch": "形状 → 旗帜 → 首都。连对不失误！"
+    },
+    "gaufrle": {
+      "title": "Gaufrle —— 把混沌变成文字！",
+      "pitch": "发现这款每日游戏，它将检验你的词汇量。",
+      "visit": "访问网站"
     }
   },
   "HowToPlay": {

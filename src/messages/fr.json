@@ -65,6 +65,7 @@
     "playNow": "Jouer maintenant",
     "howToPlay": "Comment jouer ?",
     "pickYourMode": "Choisissez votre mode",
+    "otherGames": "Vous pouvez également essayer le jeu suivant :",
     "flag": {
       "title": "Drapeau",
       "pitch": "Devine le pays à partir de son drapeau."
@@ -80,6 +81,11 @@
     "ultimate": {
       "title": "Ultime",
       "pitch": "Forme → Drapeau → Capitale. Enchaîne sans te tromper !"
+    },
+    "gaufrle": {
+      "title": "Gaufrle - Transformez le chaos en mots !",
+      "pitch": "Découvrez le jeu quotidien qui mettra votre vocabulaire à l'épreuve.",
+      "visit": "Visiter le site"
     }
   },
   "HowToPlay": {

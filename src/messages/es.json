@@ -65,6 +65,7 @@
     "playNow": "Jugar ahora",
     "howToPlay": "¿Cómo jugar?",
     "pickYourMode": "Elige tu modo",
+    "otherGames": "Si hablas francés con fluidez, también puedes probar el siguiente juego:",
     "flag": {
       "title": "Bandera",
       "pitch": "Adivina el país a partir de su bandera."
@@ -103,6 +104,11 @@
       "title": "Modo Definitivo",
       "how": "Una serie que mezcla siluetas, banderas, capitales y valores (superficie, población).",
       "numbers": "Para los valores (superficie, población), introduce un número. La respuesta se acepta si está dentro de la tolerancia indicada."
+    },
+    "gaufrle": {
+      "title": "Gaufrle — ¡Transforma el caos en palabras!",
+      "pitch": "Descubre el juego diario que pondrá a prueba tu vocabulario.",
+      "visit": "Visitar el sitio"
     }
   },
   "LocaleSwitch": {

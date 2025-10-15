@@ -119,7 +119,7 @@ export default function UltimateQuizPage() {
             </span>
           </p>
         )}
-        <h2 className="text-lg lg:text-xl font-semibold mb-4">{title}</h2>
+        <h3 className="text-lg lg:text-xl font-semibold mb-4">{title}</h3>
 
         <div className="mb-6">
           {c.kind === "shape" && (
