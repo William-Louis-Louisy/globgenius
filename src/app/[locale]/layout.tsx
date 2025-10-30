@@ -23,7 +23,7 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   title: "GlobGenius",
   description:
-    "Joue, progresse, et maîtrise drapeaux, capitales et frontières, un défi à la fois.",
+    "Play, progress, and master flags, capitals, and borders—one challenge at a time.",
 };
 
 export default async function LocaleLayout({
